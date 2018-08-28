@@ -1,6 +1,7 @@
 package eu.cpswarm.optimization.messages;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,7 +14,7 @@ public class StartOptimizationMessage extends Message{
 	protected String params;
 
 	@SerializedName("SimulationManagers")
-	protected ArrayList<String> simulationManagers;
+	protected List<String> simulationManagers;
 
 	public int getThreads() {
 		return threads;
@@ -39,11 +40,11 @@ public class StartOptimizationMessage extends Message{
 		this.params = params;
 	}
 
-	public ArrayList<String> getSimulationManagers() {
+	public List<String> getSimulationManagers() {
 		return simulationManagers;
 	}
 
-	public void setSimulationManagers(ArrayList<String> simulationManagers) {
+	public void setSimulationManagers(List<String> simulationManagers) {
 		this.simulationManagers = simulationManagers;
 	}
 }
