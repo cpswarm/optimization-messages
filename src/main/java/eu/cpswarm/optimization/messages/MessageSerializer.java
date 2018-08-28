@@ -10,7 +10,7 @@ public class MessageSerializer {
 	
 	public MessageSerializer() {
 
-		var typeFactory = RuntimeTypeAdapterFactory.of(Message.class, "type")
+		RuntimeTypeAdapterFactory<Message> typeFactory = RuntimeTypeAdapterFactory.of(Message.class, "type")
 				.registerSubtype(StartOptimizationMessage.class, "StartOptimization")
 				.registerSubtype(GetProgressMessage.class, "GetProgress")
 				.registerSubtype(CancelSimulationMessage.class, "CancelSimulation")
