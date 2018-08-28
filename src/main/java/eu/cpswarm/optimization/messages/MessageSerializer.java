@@ -24,8 +24,8 @@ public class MessageSerializer {
 		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
 	}
 	
-	public Message fromJson(String json) {
-		return gson.fromJson(json, Message.class);
+	public <T extends Message> T fromJson(String json) {
+		return (T) gson.fromJson(json, Message.class);
 	}
 	
 	public String toString(Message message) {
