@@ -19,6 +19,7 @@ public class MessageSerializer {
 				.registerSubtype(OptimizationCancelledMessage.class, "OptimizationCancelled")
 				.registerSubtype(OptimizationProgressMessage.class, "OptimizationProgress")
 				.registerSubtype(OptimizationCompleteMessage.class, "OptimizationComplete")
+				.registerSubtype(OptimizationReplyMessage.class, "OptimizationReply")
 				.registerSubtype(RunSimulationMessage.class, "RunSimulation");
 
 		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();

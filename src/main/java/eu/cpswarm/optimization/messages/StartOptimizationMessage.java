@@ -1,6 +1,5 @@
 package eu.cpswarm.optimization.messages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
@@ -12,6 +11,12 @@ public class StartOptimizationMessage extends Message{
 	protected boolean gui;
 
 	protected String params;
+	
+
+	public StartOptimizationMessage() {
+		super();
+		super.setType("StartOptimization");
+	}
 
 	@SerializedName("SimulationManagers")
 	protected List<String> simulationManagers;

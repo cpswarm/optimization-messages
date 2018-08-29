@@ -4,6 +4,11 @@ public class RunSimulationMessage extends SimulationMessage {
 	protected boolean gui;
 
 	protected String params;
+	
+	public RunSimulationMessage() {
+		super();
+		super.setType("RunSimulation");
+	}
 
 	public boolean isGui() {
 		return gui;

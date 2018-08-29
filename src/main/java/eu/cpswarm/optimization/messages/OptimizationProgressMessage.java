@@ -1,10 +1,18 @@
 package eu.cpswarm.optimization.messages;
 
-public class OptimizationProgressMessage extends OptimizationReplyMessage {
+public class OptimizationProgressMessage extends OptimizationReplyMessage {	
 	protected double progress;
 	protected double fitnessValue;
 	protected String uom;
 	
+	
+	
+	
+	public OptimizationProgressMessage() {
+		super();
+		super.setType("OptimizationProgress");
+	}
+
 	public double getProgress() {
 		return progress;
 	}
