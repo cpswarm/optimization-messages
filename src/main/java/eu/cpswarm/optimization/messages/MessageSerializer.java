@@ -13,7 +13,7 @@ public class MessageSerializer {
 		RuntimeTypeAdapterFactory<Message> typeFactory = RuntimeTypeAdapterFactory.of(Message.class)
 				.registerSubtype(StartOptimizationMessage.class, StartOptimizationMessage.TYPE_NAME)
 				.registerSubtype(GetProgressMessage.class, GetProgressMessage.TYPE_NAME)
-				.registerSubtype(CancelSimulationMessage.class, CancelSimulationMessage.TYPE_NAME)
+				.registerSubtype(CancelOptimizationMessage.class, CancelOptimizationMessage.TYPE_NAME)
 				.registerSubtype(SimulationResultMessage.class, SimulationResultMessage.TYPE_NAME)
 				.registerSubtype(OptimizationStartedMessage.class, OptimizationStartedMessage.TYPE_NAME)
 				.registerSubtype(OptimizationCancelledMessage.class, OptimizationCancelledMessage.TYPE_NAME)
