@@ -7,29 +7,29 @@ import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 public class MessageSerializer {
 
 	protected Gson gson;
-	
+
 	public MessageSerializer() {
 
-		RuntimeTypeAdapterFactory<Message> typeFactory = RuntimeTypeAdapterFactory.of(Message.class, "type")
-				.registerSubtype(StartOptimizationMessage.class, "StartOptimization")
-				.registerSubtype(GetProgressMessage.class, "GetProgress")
-				.registerSubtype(CancelSimulationMessage.class, "CancelSimulation")
-				.registerSubtype(SimulationResultMessage.class, "SimulationResult")
-				.registerSubtype(OptimizationStartedMessage.class, "OptimizationStarted")
-				.registerSubtype(OptimizationCancelledMessage.class, "OptimizationCancelled")
-				.registerSubtype(OptimizationProgressMessage.class, "OptimizationProgress")
-				.registerSubtype(OptimizationCompleteMessage.class, "OptimizationComplete")
-				.registerSubtype(OptimizationReplyMessage.class, "OptimizationReply")
-				.registerSubtype(RunSimulationMessage.class, "RunSimulation");
+		RuntimeTypeAdapterFactory<Message> typeFactory = RuntimeTypeAdapterFactory.of(Message.class)
+				.registerSubtype(StartOptimizationMessage.class, StartOptimizationMessage.TYPE_NAME)
+				.registerSubtype(GetProgressMessage.class, GetProgressMessage.TYPE_NAME)
+				.registerSubtype(CancelSimulationMessage.class, CancelSimulationMessage.TYPE_NAME)
+				.registerSubtype(SimulationResultMessage.class, SimulationResultMessage.TYPE_NAME)
+				.registerSubtype(OptimizationStartedMessage.class, OptimizationStartedMessage.TYPE_NAME)
+				.registerSubtype(OptimizationCancelledMessage.class, OptimizationCancelledMessage.TYPE_NAME)
+				.registerSubtype(OptimizationProgressMessage.class, OptimizationProgressMessage.TYPE_NAME)
+				.registerSubtype(OptimizationCompleteMessage.class, OptimizationCompleteMessage.TYPE_NAME)
+				.registerSubtype(RunSimulationMessage.class, RunSimulationMessage.TYPE_NAME);
 
 		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	public <T extends Message> T fromJson(String json) {
 		return (T) gson.fromJson(json, Message.class);
 	}
-	
-	public String toString(Message message) {
+
+	public String toJson(Message message) {
 		return gson.toJson(message);
 	}
 }

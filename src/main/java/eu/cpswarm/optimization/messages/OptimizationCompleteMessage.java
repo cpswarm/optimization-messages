@@ -1,18 +1,17 @@
 package eu.cpswarm.optimization.messages;
 
 public class OptimizationCompleteMessage extends OptimizationReplyMessage {
+	public static final String TYPE_NAME = "OptimizationComplete";
+
 	protected double fitnessValue;
-	
-	public OptimizationCompleteMessage() {
-		super();
-		super.setType("OptimizationComplete");
-	}
-	
-	public double getFitnessValue() {
-		return fitnessValue;
+
+	public OptimizationCompleteMessage(String id, OptimizationReplyMessage.Status operationStatus,
+			double fitnessValue) {
+		super(TYPE_NAME, id, operationStatus);
+		this.fitnessValue = fitnessValue;
 	}
 
-	public void setFitnessValue(double fitnessValue) {
-		this.fitnessValue = fitnessValue;
+	public double getFitnessValue() {
+		return fitnessValue;
 	}
 }

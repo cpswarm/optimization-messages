@@ -1,41 +1,22 @@
 package eu.cpswarm.optimization.messages;
 
-public class OptimizationProgressMessage extends OptimizationReplyMessage {	
+public class OptimizationProgressMessage extends OptimizationReplyMessage {
+	public static final String TYPE_NAME = "OptimizationProgress";
 	protected double progress;
 	protected double fitnessValue;
-	protected String uom;
-	
-	
-	
-	
-	public OptimizationProgressMessage() {
-		super();
-		super.setType("OptimizationProgress");
+
+	public OptimizationProgressMessage(String id, OptimizationReplyMessage.Status operationStatus, double progress,
+			double fitnessValue) {
+		super(TYPE_NAME, id, operationStatus);
+		this.progress = progress;
+		this.fitnessValue = fitnessValue;
 	}
 
 	public double getProgress() {
 		return progress;
 	}
-	
-	public void setProgress(double progress) {
-		this.progress = progress;
-	}
-	
+
 	public double getFitnessValue() {
 		return fitnessValue;
 	}
-	
-	public void setFitnessValue(double fitnessValue) {
-		this.fitnessValue = fitnessValue;
-	}
-	
-	public String getUom() {
-		return uom;
-	}
-	
-	public void setUom(String uom) {
-		this.uom = uom;
-	}
-	
-	
 }

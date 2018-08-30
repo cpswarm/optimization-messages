@@ -4,52 +4,40 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-public class StartOptimizationMessage extends Message{
+public class StartOptimizationMessage extends Message {
+	public static final String TYPE_NAME = "StartOptimization";
 
 	protected int threads;
 
 	protected boolean gui;
 
 	protected String params;
-	
-
-	public StartOptimizationMessage() {
-		super();
-		super.setType("StartOptimization");
-	}
 
 	@SerializedName("SimulationManagers")
 	protected List<String> simulationManagers;
 
-	public int getThreads() {
-		return threads;
+	public StartOptimizationMessage(String id, int threads, boolean gui, String params,
+			List<String> simulationManagers) {
+		super(TYPE_NAME, id);
+		this.threads = threads;
+		this.gui = gui;
+		this.params = params;
+		this.simulationManagers = simulationManagers;
 	}
 
-	public void setThreads(int threads) {
-		this.threads = threads;
+	public int getThreads() {
+		return threads;
 	}
 
 	public boolean isGui() {
 		return gui;
 	}
 
-	public void setGui(boolean gui) {
-		this.gui = gui;
-	}
-
 	public String getParams() {
 		return params;
 	}
 
-	public void setParams(String params) {
-		this.params = params;
-	}
-
 	public List<String> getSimulationManagers() {
 		return simulationManagers;
-	}
-
-	public void setSimulationManagers(List<String> simulationManagers) {
-		this.simulationManagers = simulationManagers;
 	}
 }

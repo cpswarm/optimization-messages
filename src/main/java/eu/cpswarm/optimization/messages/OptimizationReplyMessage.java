@@ -1,19 +1,18 @@
 package eu.cpswarm.optimization.messages;
 
-public class OptimizationReplyMessage extends Message {
-	protected String operationStatus;
-	
+public abstract class OptimizationReplyMessage extends Message {
 
-	public OptimizationReplyMessage() {
-		super();
-		super.setType("OptimizationReply");	
+	public enum Status {
+		OK, ERROR
 	}
 
-	public String getOperationStatus() {
+	protected Status operationStatus;
+
+	public OptimizationReplyMessage(String type, String id, Status operationStatus) {
+		super(type, id);
+	}
+
+	public Status getOperationStatus() {
 		return operationStatus;
-	}
-
-	public void setOperationStatus(String operationStatus) {
-		this.operationStatus = operationStatus;
 	}
 }
