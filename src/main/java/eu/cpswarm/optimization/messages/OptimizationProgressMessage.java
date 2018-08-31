@@ -5,9 +5,9 @@ public class OptimizationProgressMessage extends OptimizationReplyMessage {
 	protected double progress;
 	protected double fitnessValue;
 
-	public OptimizationProgressMessage(String id, OptimizationReplyMessage.Status operationStatus, double progress,
+	public OptimizationProgressMessage(String id, String description, OptimizationReplyMessage.Status operationStatus, double progress,
 			double fitnessValue) {
-		super(TYPE_NAME, id, operationStatus);
+		super(TYPE_NAME, id, description, operationStatus);
 		this.progress = progress;
 		this.fitnessValue = fitnessValue;
 	}

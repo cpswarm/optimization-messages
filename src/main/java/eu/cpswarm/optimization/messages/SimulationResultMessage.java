@@ -5,8 +5,8 @@ public class SimulationResultMessage extends SimulationMessage {
 
 	protected double fitnessValue;
 
-	public SimulationResultMessage(String id, String sid, double fitnessValue) {
-		super(TYPE_NAME, id, sid);
+	public SimulationResultMessage(String id, String description, String sid, double fitnessValue) {
+		super(TYPE_NAME, id, description, sid);
 		this.fitnessValue = fitnessValue;
 	}
 

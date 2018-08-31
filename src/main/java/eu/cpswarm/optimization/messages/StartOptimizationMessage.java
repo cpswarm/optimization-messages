@@ -16,9 +16,9 @@ public class StartOptimizationMessage extends Message {
 	@SerializedName("SimulationManagers")
 	protected List<String> simulationManagers;
 
-	public StartOptimizationMessage(String id, int threads, boolean gui, String params,
+	public StartOptimizationMessage(String id, String description, int threads, boolean gui, String params,
 			List<String> simulationManagers) {
-		super(TYPE_NAME, id);
+		super(TYPE_NAME, id, description);
 		this.threads = threads;
 		this.gui = gui;
 		this.params = params;

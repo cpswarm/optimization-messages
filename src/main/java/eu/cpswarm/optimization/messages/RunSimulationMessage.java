@@ -7,8 +7,8 @@ public class RunSimulationMessage extends SimulationMessage {
 
 	protected String params;
 
-	public RunSimulationMessage(String id, String sid, boolean gui, String params) {
-		super(TYPE_NAME, id, sid);
+	public RunSimulationMessage(String id, String description, String sid, boolean gui, String params) {
+		super(TYPE_NAME, id, description, sid);
 		this.gui = gui;
 		this.params = params;
 	}

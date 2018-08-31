@@ -14,8 +14,8 @@ public abstract class OptimizationReplyMessage extends Message {
 	@SerializedName("status")
 	protected Status operationStatus;
 
-	public OptimizationReplyMessage(String type, String id, Status operationStatus) {
-		super(type, id);
+	public OptimizationReplyMessage(String type, String id, String description, Status operationStatus) {
+		super(type, id, description);
 		this.operationStatus = operationStatus;
 	}
 

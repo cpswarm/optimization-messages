@@ -5,9 +5,9 @@ public class OptimizationCompleteMessage extends OptimizationReplyMessage {
 
 	protected double fitnessValue;
 
-	public OptimizationCompleteMessage(String id, OptimizationReplyMessage.Status operationStatus,
+	public OptimizationCompleteMessage(String id, String description, OptimizationReplyMessage.Status operationStatus,
 			double fitnessValue) {
-		super(TYPE_NAME, id, operationStatus);
+		super(TYPE_NAME, id, description, operationStatus);
 		this.fitnessValue = fitnessValue;
 	}
 

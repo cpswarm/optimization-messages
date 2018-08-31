@@ -10,9 +10,12 @@ public abstract class Message {
 	@SerializedName("type")
 	protected String type;
 
-	protected Message(String type, String id) {
+	protected String description;
+
+	protected Message(String type, String id, String description) {
 		this.type = type;
 		this.id = id;
+		this.description = description;
 	}
 
 	public String getId() {
@@ -21,5 +24,9 @@ public abstract class Message {
 
 	public String getType() {
 		return type;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 }
