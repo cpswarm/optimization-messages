@@ -1,15 +1,17 @@
 package eu.cpswarm.optimization.messages;
 
-public class OptimizationProgressMessage extends OptimizationReplyMessage {
+public class OptimizationProgressMessage extends ReplyMessage {
 	public static final String TYPE_NAME = "OptimizationProgress";
 	protected double progress;
 	protected double fitnessValue;
+	protected String candidate;
 
-	public OptimizationProgressMessage(String id, String description, OptimizationReplyMessage.Status operationStatus, double progress,
-			double fitnessValue) {
+	public OptimizationProgressMessage(String id, String description, ReplyMessage.Status operationStatus,
+			double progress, double fitnessValue, String candidate) {
 		super(TYPE_NAME, id, description, operationStatus);
 		this.progress = progress;
 		this.fitnessValue = fitnessValue;
+		this.candidate = candidate;
 	}
 
 	public double getProgress() {
@@ -18,5 +20,9 @@ public class OptimizationProgressMessage extends OptimizationReplyMessage {
 
 	public double getFitnessValue() {
 		return fitnessValue;
+	}
+
+	public String getCandidate() {
+		return candidate;
 	}
 }

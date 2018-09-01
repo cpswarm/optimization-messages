@@ -1,23 +1,31 @@
 package eu.cpswarm.optimization.messages;
 
-public class RunSimulationMessage extends SimulationMessage {
+import com.google.gson.annotations.SerializedName;
+
+public class RunSimulationMessage extends Message {
 	public static final String TYPE_NAME = "RunSimulation";
 
-	protected boolean gui;
+	@SerializedName("SID")
+	protected String sid;
+	protected String configuration;
+	protected String candidate;
 
-	protected String params;
-
-	public RunSimulationMessage(String id, String description, String sid, boolean gui, String params) {
-		super(TYPE_NAME, id, description, sid);
-		this.gui = gui;
-		this.params = params;
+	public RunSimulationMessage(String id, String description, String sid, String configuration, String candidate) {
+		super(TYPE_NAME, id, description);
+		this.sid = sid;
+		this.configuration = configuration;
+		this.candidate = candidate;
 	}
 
-	public boolean isGui() {
-		return gui;
+	public String getSid() {
+		return sid;
 	}
 
-	public String getParams() {
-		return params;
+	public String getConfiguration() {
+		return configuration;
+	}
+
+	public String getCandidate() {
+		return candidate;
 	}
 }

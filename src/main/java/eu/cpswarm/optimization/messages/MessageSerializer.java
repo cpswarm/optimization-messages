@@ -14,12 +14,11 @@ public class MessageSerializer {
 				.registerSubtype(StartOptimizationMessage.class, StartOptimizationMessage.TYPE_NAME)
 				.registerSubtype(GetProgressMessage.class, GetProgressMessage.TYPE_NAME)
 				.registerSubtype(CancelOptimizationMessage.class, CancelOptimizationMessage.TYPE_NAME)
-				.registerSubtype(SimulationResultMessage.class, SimulationResultMessage.TYPE_NAME)
 				.registerSubtype(OptimizationStartedMessage.class, OptimizationStartedMessage.TYPE_NAME)
 				.registerSubtype(OptimizationCancelledMessage.class, OptimizationCancelledMessage.TYPE_NAME)
 				.registerSubtype(OptimizationProgressMessage.class, OptimizationProgressMessage.TYPE_NAME)
-				.registerSubtype(OptimizationCompleteMessage.class, OptimizationCompleteMessage.TYPE_NAME)
-				.registerSubtype(RunSimulationMessage.class, RunSimulationMessage.TYPE_NAME);
+				.registerSubtype(RunSimulationMessage.class, RunSimulationMessage.TYPE_NAME)
+				.registerSubtype(SimulationResultMessage.class, SimulationResultMessage.TYPE_NAME);
 
 		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
 	}

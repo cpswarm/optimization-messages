@@ -7,34 +7,26 @@ import com.google.gson.annotations.SerializedName;
 public class StartOptimizationMessage extends Message {
 	public static final String TYPE_NAME = "StartOptimization";
 
-	protected int threads;
-
-	protected boolean gui;
-
-	protected String params;
+	protected String optimizationConfiguration;
+	protected String simulationConfiguration;
 
 	@SerializedName("SimulationManagers")
 	protected List<String> simulationManagers;
 
-	public StartOptimizationMessage(String id, String description, int threads, boolean gui, String params,
-			List<String> simulationManagers) {
+	public StartOptimizationMessage(String id, String description, String optimizationConfiguration,
+			String simulationConfiguration, List<String> simulationManagers) {
 		super(TYPE_NAME, id, description);
-		this.threads = threads;
-		this.gui = gui;
-		this.params = params;
+		this.optimizationConfiguration = optimizationConfiguration;
+		this.simulationConfiguration = simulationConfiguration;
 		this.simulationManagers = simulationManagers;
 	}
 
-	public int getThreads() {
-		return threads;
+	public String getOptimizationConfiguration() {
+		return optimizationConfiguration;
 	}
 
-	public boolean isGui() {
-		return gui;
-	}
-
-	public String getParams() {
-		return params;
+	public String getSimulationConfiguration() {
+		return simulationConfiguration;
 	}
 
 	public List<String> getSimulationManagers() {
