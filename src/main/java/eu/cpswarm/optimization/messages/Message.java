@@ -4,29 +4,23 @@ import com.google.gson.annotations.SerializedName;
 
 public abstract class Message {
 
-	@SerializedName("ID")
-	protected String id;
+	@SerializedName("OID")
+	protected String oid;
 
 	@SerializedName("type")
 	protected String type;
 
-	protected String description;
 
-	protected Message(String type, String id, String description) {
+	protected Message(String type, String oid) {
 		this.type = type;
-		this.id = id;
-		this.description = description;
+		this.oid = oid;
 	}
 
-	public String getId() {
-		return id;
+	public String getOId() {
+		return oid;
 	}
 
 	public String getType() {
 		return type;
-	}
-
-	public String getDescription() {
-		return description;
 	}
 }
