@@ -6,4 +6,8 @@ public class GetOptimizationStatusMessage extends Message {
 	public GetOptimizationStatusMessage(String oid) {
 		super(TYPE_NAME, oid);
 	}
+	
+	public GetOptimizationStatusMessage() {
+		this.type = TYPE_NAME;
+	}
 }

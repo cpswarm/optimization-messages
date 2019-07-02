@@ -14,12 +14,16 @@ public class RunSimulationMessage extends Message {
 	@SerializedName("candidateType")
 	protected String candidateType;
 
-	public RunSimulationMessage(String id, String description, String sid, String configuration, String candidate, String candidateType) {
-		super(TYPE_NAME, id);
+	public RunSimulationMessage(String oid, String sid, String configuration, String candidate, String candidateType) {
+		super(TYPE_NAME, oid);
 		this.sid = sid;
 		this.configuration = configuration;
 		this.candidate = candidate;
 		this.candidateType = candidateType;
+	}
+	
+	public RunSimulationMessage() {
+		this.type = TYPE_NAME;
 	}
 
 	public String getSid() {

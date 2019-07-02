@@ -35,6 +35,10 @@ public class OptimizationStatusMessage extends Message {
 		this.bestController = bestController;
 	}
 	
+	public OptimizationStatusMessage() {
+		this.type = TYPE_NAME;
+	}
+	
 	public Status getOperationStatus() {
 		return operationStatus;
 	}
@@ -47,7 +51,7 @@ public class OptimizationStatusMessage extends Message {
 		return bestFitnessValue;
 	}
 	
-	public String getCBestontroller() {
+	public String getBestController() {
 		return bestController;
 	}
 }

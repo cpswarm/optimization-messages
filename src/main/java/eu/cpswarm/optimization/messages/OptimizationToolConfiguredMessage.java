@@ -7,4 +7,8 @@ public class OptimizationToolConfiguredMessage extends ReplyMessage {
 	public OptimizationToolConfiguredMessage(String oid, Boolean success) {
 		super(TYPE_NAME, oid, success);
 	}
+	
+	public OptimizationToolConfiguredMessage() {
+		this.type = TYPE_NAME;
+	}
 }

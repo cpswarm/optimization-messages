@@ -6,4 +6,8 @@ public class CancelOptimizationMessage extends Message {
 	public CancelOptimizationMessage(String oid) {
 		super(TYPE_NAME, oid);
 	}
+	
+	public CancelOptimizationMessage() {
+		this.type = TYPE_NAME;
+	}
 }

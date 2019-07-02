@@ -11,9 +11,13 @@ public abstract class Message {
 	protected String type;
 
 
-	protected Message(String type, String oid) {
+	public Message(String type, String oid) {
 		this.type = type;
 		this.oid = oid;
+	}
+	
+	public Message() {
+
 	}
 
 	public String getOId() {

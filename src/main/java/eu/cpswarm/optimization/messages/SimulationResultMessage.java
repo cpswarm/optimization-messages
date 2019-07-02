@@ -12,11 +12,14 @@ public class SimulationResultMessage extends ReplyMessage {
 	protected double fitnessValue;
 
 
-	public SimulationResultMessage(String oid, String description, Boolean success, String sid,
-			double fitnessValue) {
+	public SimulationResultMessage(String oid, Boolean success, String sid, double fitnessValue) {
 		super(TYPE_NAME, oid, success);
 		this.sid = sid;
 		this.fitnessValue = fitnessValue;
+	}
+	
+	public SimulationResultMessage() {
+		this.type = TYPE_NAME;
 	}
 
 	public String getSid() {

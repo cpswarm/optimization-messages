@@ -15,6 +15,10 @@ public class StartOptimizationMessage extends Message {
 		this.configuration = configuration;
 		this.scid = scid;
 	}
+	
+	public StartOptimizationMessage() {
+		this.type = TYPE_NAME;
+	}
 
 	public String getConfiguration() {
 		return configuration;

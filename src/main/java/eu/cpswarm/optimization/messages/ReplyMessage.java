@@ -12,6 +12,10 @@ public abstract class ReplyMessage extends Message {
 		super(type, oid);
 		this.success = success;
 	}
+	
+	public ReplyMessage() {
+
+	}
 
 	public Boolean getSuccess() {
 		return success;
