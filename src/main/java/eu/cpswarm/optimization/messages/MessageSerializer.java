@@ -14,7 +14,6 @@ public class MessageSerializer {
 				.registerSubtype(CancelOptimizationMessage.class, CancelOptimizationMessage.TYPE_NAME)
 				.registerSubtype(GetOptimizationStateMessage.class, GetOptimizationStateMessage.TYPE_NAME)
 				.registerSubtype(GetOptimizationStatusMessage.class, GetOptimizationStatusMessage.TYPE_NAME)
-				.registerSubtype(OptimizationStateMessage.class, OptimizationStateMessage.TYPE_NAME)
 				.registerSubtype(OptimizationStatusMessage.class, OptimizationStatusMessage.TYPE_NAME)
 				.registerSubtype(OptimizationToolConfiguredMessage.class, OptimizationToolConfiguredMessage.TYPE_NAME)
 				.registerSubtype(RunSimulationMessage.class, RunSimulationMessage.TYPE_NAME)
