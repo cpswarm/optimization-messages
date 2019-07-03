@@ -6,6 +6,8 @@ public class OptimizationStatusMessage extends Message {
 	public static final String TYPE_NAME = "OptimizationStatus";
 
 	public enum Status {
+		@SerializedName("Started")
+		STARTED,
 		@SerializedName("ErrorBadConfiguration")
 		ERROR_BAD_CONFIGURATION,
 		@SerializedName("Running")
