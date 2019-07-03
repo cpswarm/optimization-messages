@@ -30,7 +30,7 @@ public class OptimizationStatusMessage extends Message {
 	@SerializedName("bestController")
 	protected String bestController;
 	
-	public OptimizationStatusMessage(String oid, String TYPE_NAME, Status operationStatus, double bestFitnessValue, String bestController) {
+	public OptimizationStatusMessage(String oid, Status operationStatus, double bestFitnessValue, String bestController) {
 		super(TYPE_NAME, oid);
 		this.operationStatus = operationStatus;
 		this.bestFitnessValue = bestFitnessValue;
