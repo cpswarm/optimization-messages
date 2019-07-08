@@ -26,7 +26,7 @@ public class RunSimulationMessage extends Message {
 	public String getSid() {
 		return sid;
 	}
-	
+
 	public String getCandidate() {
 		return candidate;
 	}
