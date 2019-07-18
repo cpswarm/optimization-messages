@@ -6,15 +6,15 @@ public class OptimizationStatusMessage extends Message {
 	public static final String TYPE_NAME = "OptimizationStatus";
 
 	public enum Status {
-		@SerializedName("ErrorBadConfiguration")  // optimization is not actived
+		@SerializedName("ErrorBadConfiguration")
 		ERROR_BAD_CONFIGURATION,
-		@SerializedName("Started")   // reply to StartOptimization when received in first time, maybe remove the OptimizationToolConfigured class  
+		@SerializedName("Started")
 		STARTED,
-		@SerializedName("Running")   // running for some time, with a progress
+		@SerializedName("Running")
 		RUNNING,
-		@SerializedName("ErrorOptimizationFailed")     // error appeared
+		@SerializedName("ErrorOptimizationFailed")
 		ERROR_OPTIMIZAZION_FAILED,
-		@SerializedName("Cancelled")    //  request from SOO to cancel it without error, stopped
+		@SerializedName("Cancelled")
 		CANCELLED,
 		@SerializedName("Completed")
 		COMPLETED
