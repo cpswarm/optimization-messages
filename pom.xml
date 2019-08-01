@@ -47,8 +47,6 @@
 						<Bundle-SymbolicName>
 							${project.artifactId}
 						</Bundle-SymbolicName>
-						<!-- <Export-Package> it.ismb.pert.piramid.example.configuration.* 
-							</Export-Package> -->
 					</instructions>
 				</configuration>
 			</plugin>
