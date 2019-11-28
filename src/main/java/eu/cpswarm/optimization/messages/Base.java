@@ -1,5 +1,5 @@
 /**
- * File: StartOptimizationMessage.java
+ * File: Base.java
  * 
  * Copyright (C) 2019 CPSwarm Project
  *
@@ -18,32 +18,17 @@ package eu.cpswarm.optimization.messages;
 
 import com.google.gson.annotations.SerializedName;
 
-public class StartOptimizationMessage extends Message {
+public abstract class Base {
 
-	public static final String TYPE_NAME = "StartOptimization";
-
-	@SerializedName("configuration")
-	protected String configuration;
-
-	@SerializedName("SCID")
-	protected String scid;
+    @SerializedName("type")
+    protected String type;
 
 
-	public StartOptimizationMessage(String oid, String configuration, String scid) {
-		super(TYPE_NAME, oid);
-		this.configuration = configuration;
-		this.scid = scid;
-	}
+    public Base(String type) {
+        this.type = type;
+    }
 
-	public StartOptimizationMessage() {
-		this(null, null, null);
-	}
-
-	public String getConfiguration() {
-		return configuration;
-	}
-
-	public String getSCID() {
-		return scid;
-	}
+    public String getType() {
+        return type;
+    }
 }
