@@ -29,11 +29,15 @@ public class SimulationResultMessage extends ReplyMessage {
 	protected double fitnessValue;
 
 
-	public SimulationResultMessage(String id, String description, ReplyMessage.Status status,
+	public SimulationResultMessage(String id, String description, Status status,
 			String sid, double fitnessValue) {
 		super(TYPE_NAME, id, description, status);
 		this.sid = sid;
 		this.fitnessValue = fitnessValue;
+	}
+
+	public SimulationResultMessage() {
+		this(null, null, Status.ERROR, null, -1);
 	}
 
 	public String getSid() {

@@ -24,4 +24,8 @@ public class CancelOptimizationMessage extends Message {
 	public CancelOptimizationMessage(String id, String description) {
 		super(TYPE_NAME, id, description);
 	}
+
+	public CancelOptimizationMessage() {
+		this(null, null);
+	}
 }

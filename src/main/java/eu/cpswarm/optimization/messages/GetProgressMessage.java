@@ -24,4 +24,8 @@ public class GetProgressMessage extends Message {
 	public GetProgressMessage(String id, String description) {
 		super(TYPE_NAME, id, description);
 	}
+
+	public GetProgressMessage() {
+		this(null, null);
+	}
 }

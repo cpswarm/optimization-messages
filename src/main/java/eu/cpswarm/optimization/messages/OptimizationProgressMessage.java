@@ -33,12 +33,16 @@ public class OptimizationProgressMessage extends ReplyMessage {
 
 
 	public OptimizationProgressMessage(String id, String description,
-			ReplyMessage.Status operationStatus, double progress, double fitnessValue,
+			Status operationStatus, double progress, double fitnessValue,
 			ParameterSet parameterSet) {
 		super(TYPE_NAME, id, description, operationStatus);
 		this.progress = progress;
 		this.fitnessValue = fitnessValue;
 		this.parameterSet = parameterSet;
+	}
+
+	public OptimizationProgressMessage() {
+		this(null, null, Status.ERROR, 0, -1, null);
 	}
 
 	public double getProgress() {

@@ -22,7 +22,11 @@ public class OptimizationStartedMessage extends ReplyMessage {
 
 
 	public OptimizationStartedMessage(String id, String description,
-			ReplyMessage.Status operationStatus) {
+			Status operationStatus) {
 		super(TYPE_NAME, id, description, operationStatus);
+	}
+
+	public OptimizationStartedMessage() {
+		this(null, null, Status.ERROR);
 	}
 }

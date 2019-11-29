@@ -40,6 +40,10 @@ public class RunSimulationMessage extends Message {
 		this.parameterSet = parameterSet;
 	}
 
+	public RunSimulationMessage() {
+		this(null, null, null, null, null);
+	}
+
 	public String getSid() {
 		return sid;
 	}

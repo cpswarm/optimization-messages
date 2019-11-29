@@ -22,7 +22,11 @@ public class OptimizationCancelledMessage extends ReplyMessage {
 
 
 	public OptimizationCancelledMessage(String id, String description,
-			ReplyMessage.Status operationStatus) {
+			Status operationStatus) {
 		super(TYPE_NAME, id, description, operationStatus);
+	}
+
+	public OptimizationCancelledMessage() {
+		this(null, null, Status.ERROR);
 	}
 }

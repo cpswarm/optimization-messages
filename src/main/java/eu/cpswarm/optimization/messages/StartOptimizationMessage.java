@@ -42,6 +42,10 @@ public class StartOptimizationMessage extends Message {
 		this.simulationManagers = simulationManagers;
 	}
 
+	public StartOptimizationMessage() {
+		this(null, null, null, null, null);
+	}
+
 	public String getOptimizationConfiguration() {
 		return optimizationConfiguration;
 	}
