@@ -6,6 +6,7 @@
 	<artifactId>optimization-messages</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>optimation messages</name>
+	<packaging>bundle</packaging>
 
 
 	<properties>
@@ -19,21 +20,19 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>3.3.0</version>
+				<extensions>true</extensions>
+				<!-- | the following instructions build a simple set of public/private 
+					classes into an OSGi bundle -->
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>
+							${project.artifactId}
+						</Bundle-SymbolicName>
+					</instructions>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
