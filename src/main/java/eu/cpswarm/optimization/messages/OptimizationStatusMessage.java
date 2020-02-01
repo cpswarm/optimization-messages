@@ -1,7 +1,7 @@
 /**
  * File: OptimizationStatusMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -17,44 +17,15 @@
 package eu.cpswarm.optimization.messages;
 
 import com.google.gson.annotations.SerializedName;
+import eu.cpswarm.optimization.parameters.ParameterSet;
+import eu.cpswarm.optimization.statuses.OptimizationStatusType;
 
 public class OptimizationStatusMessage extends Message {
 
 	public static final String TYPE_NAME = "OptimizationStatus";
 
-	public enum Status {
-		// No status, in reality should not occur
-		@SerializedName("None")
-		NONE,
-
-		// OT receives a bad configuration for replying to
-		// StartOptimization
-		@SerializedName("ErrorBadConfiguration")
-		ERROR_BAD_CONFIGURATION,
-
-		// optimization is actived for replying to StartOptimization received in first time
-		@SerializedName("Started")
-		STARTED,
-
-		// running for some time, with a progress
-		@SerializedName("Running")
-		RUNNING,
-
-		// error occurs, optimization is not ongoing
-		@SerializedName("ErrorOptimizationFailed")
-		ERROR_OPTIMIZAZION_FAILED,
-
-		// request from SOO to cancel it without error, stopped
-		@SerializedName("Cancelled")
-		CANCELLED,
-
-		// completed
-		@SerializedName("Completed")
-		COMPLETED
-	}
-
-	@SerializedName("status")
-	protected Status operationStatus;
+	@SerializedName("statusType")
+	protected OptimizationStatusType statusType;
 
 	@SerializedName("progress")
 	protected double progress;
@@ -62,25 +33,26 @@ public class OptimizationStatusMessage extends Message {
 	@SerializedName("bestFitnessValue")
 	protected double bestFitnessValue;
 
-	@SerializedName("bestController")
-	protected String bestController;
+	@SerializedName("bestParameterSet")
+	protected ParameterSet bestParameterSet;
 
 
-	public OptimizationStatusMessage(String oid, double progress, Status operationStatus,
-			double bestFitnessValue, String bestController) {
-		super(TYPE_NAME, oid);
+	public OptimizationStatusMessage(String optimizationId, double progress,
+			OptimizationStatusType statusType, double bestFitnessValue,
+			ParameterSet bestParameterSet) {
+		super(TYPE_NAME, optimizationId);
 		this.progress = progress;
-		this.operationStatus = operationStatus;
+		this.statusType = statusType;
 		this.bestFitnessValue = bestFitnessValue;
-		this.bestController = bestController;
+		this.bestParameterSet = bestParameterSet;
 	}
 
 	public OptimizationStatusMessage() {
-		this(null, -1, Status.NONE, -1, null);
+		this(null, -1, OptimizationStatusType.NONE, -1, null);
 	}
 
-	public Status getOperationStatus() {
-		return operationStatus;
+	public OptimizationStatusType getStatusType() {
+		return statusType;
 	}
 
 	public double getProgress() {
@@ -91,7 +63,7 @@ public class OptimizationStatusMessage extends Message {
 		return bestFitnessValue;
 	}
 
-	public String getBestController() {
-		return bestController;
+	public ParameterSet getBestParameterSet() {
+		return bestParameterSet;
 	}
 }

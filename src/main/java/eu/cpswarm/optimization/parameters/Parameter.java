@@ -1,7 +1,7 @@
 /**
  * File: Parameter.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,13 +14,11 @@
  * the License.
  */
 
-package eu.cpswarm.optimization.messages;
+package eu.cpswarm.optimization.parameters;
 
 import com.google.gson.annotations.SerializedName;
 
-public abstract class Parameter extends Base {
-
-    public static final String TYPE_NAME = "Parameter";
+public class Parameter  {
 
     @SerializedName("name")
     protected String name;
@@ -40,7 +38,6 @@ public abstract class Parameter extends Base {
      * @param value the value of the parameter
      */
     public Parameter(String name, String meta, float value) {
-        super(TYPE_NAME);
         this.name = name;
         this.meta = meta;
         this.value = value;

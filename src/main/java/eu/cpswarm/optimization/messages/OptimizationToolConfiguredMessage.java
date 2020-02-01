@@ -1,7 +1,7 @@
 /**
  * File: OptimizationToolConfiguredMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -21,10 +21,10 @@ public class OptimizationToolConfiguredMessage extends ReplyMessage {
 	public static final String TYPE_NAME = "OptimizationToolConfigured";
 
 
-	public OptimizationToolConfiguredMessage(String oid, Boolean success) {
-		super(TYPE_NAME, oid, success);
+	public OptimizationToolConfiguredMessage(String optimizationId, boolean success) {
+		super(TYPE_NAME, optimizationId, success);
 	}
-	
+
 	public OptimizationToolConfiguredMessage() {
 		this(null, false);
 	}

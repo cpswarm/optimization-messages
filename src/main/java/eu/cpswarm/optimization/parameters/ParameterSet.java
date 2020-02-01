@@ -1,7 +1,7 @@
 /**
  * File: ParameterSet.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,19 +14,16 @@
  * the License.
  */
 
-package eu.cpswarm.optimization.messages;
+package eu.cpswarm.optimization.parameters;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class ParameterSet extends Base {
-
-    public static final String TYPE_NAME = "ParameterSet";
+public class ParameterSet {
 
     @SerializedName("parameters")
     protected List<Parameter> parameters;
-
 
     /**
      * Creates a new {@code ParameterSet} instance using the specified parameters.
@@ -34,7 +31,6 @@ public abstract class ParameterSet extends Base {
      * @param parameters the parameters to use
      */
     public ParameterSet(List<Parameter> parameters) {
-        super(TYPE_NAME);
         this.parameters = parameters;
     }
 

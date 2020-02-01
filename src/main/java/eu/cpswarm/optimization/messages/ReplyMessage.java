@@ -1,7 +1,7 @@
 /**
  * File: ReplyMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -21,15 +21,15 @@ import com.google.gson.annotations.SerializedName;
 public abstract class ReplyMessage extends Message {
 
 	@SerializedName("success")
-	protected Boolean success;
+	protected boolean success;
 
 
-	public ReplyMessage(String type, String oid, Boolean success) {
-		super(type, oid);
+	public ReplyMessage(String type, String optimizationId, boolean success) {
+		super(type, optimizationId);
 		this.success = success;
 	}
 
-	public Boolean getSuccess() {
+	public boolean getSuccess() {
 		return success;
 	}
 }

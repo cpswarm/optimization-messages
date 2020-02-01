@@ -1,7 +1,7 @@
 /**
  * File: Message.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -18,18 +18,25 @@ package eu.cpswarm.optimization.messages;
 
 import com.google.gson.annotations.SerializedName;
 
-public abstract class Message extends Base {
+public abstract class Message {
+
+    @SerializedName("type")
+    protected String type;
 
 	@SerializedName("OID")
-	protected String oid;
+	protected String optimizationId;
 
 
-	public Message(String type, String oid) {
-		super(type);
-		this.oid = oid;
+	public Message(String type, String optimizationId) {
+		this.type = type;
+		this.optimizationId = optimizationId;
 	}
 
-	public String getOId() {
-		return oid;
+	public String getType() {
+        return type;
+    }
+
+	public String getOptimizationId() {
+		return optimizationId;
 	}
 }

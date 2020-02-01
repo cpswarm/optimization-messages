@@ -1,7 +1,7 @@
 /**
  * File: GetOptimizationStatusMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -21,8 +21,8 @@ public class GetOptimizationStatusMessage extends Message {
 	public static final String TYPE_NAME = "GetOptimizationStatus";
 
 
-	public GetOptimizationStatusMessage(String oid) {
-		super(TYPE_NAME, oid);
+	public GetOptimizationStatusMessage(String optimizationId) {
+		super(TYPE_NAME, optimizationId);
 	}
 	
 	public GetOptimizationStatusMessage() {

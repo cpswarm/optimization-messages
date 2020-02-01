@@ -1,7 +1,7 @@
 /**
  * File: StartOptimizationMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -26,13 +26,13 @@ public class StartOptimizationMessage extends Message {
 	protected String configuration;
 
 	@SerializedName("SCID")
-	protected String scid;
+	protected String simulationConfigurationId;
 
 
-	public StartOptimizationMessage(String oid, String configuration, String scid) {
-		super(TYPE_NAME, oid);
+	public StartOptimizationMessage(String optimizationId, String configuration, String simulationConfigurationId) {
+		super(TYPE_NAME, optimizationId);
 		this.configuration = configuration;
-		this.scid = scid;
+		this.simulationConfigurationId = simulationConfigurationId;
 	}
 
 	public StartOptimizationMessage() {
@@ -43,7 +43,7 @@ public class StartOptimizationMessage extends Message {
 		return configuration;
 	}
 
-	public String getSCID() {
-		return scid;
+	public String getSimulationConfigurationId() {
+		return simulationConfigurationId;
 	}
 }

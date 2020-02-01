@@ -1,7 +1,7 @@
 /**
  * File: CancelOptimizationMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -21,8 +21,8 @@ public class CancelOptimizationMessage extends Message {
 	public static final String TYPE_NAME = "CancelOptimization";
 
 
-	public CancelOptimizationMessage(String oid) {
-		super(TYPE_NAME, oid);
+	public CancelOptimizationMessage(String optimizationId) {
+		super(TYPE_NAME, optimizationId);
 	}
 
 	public CancelOptimizationMessage() {

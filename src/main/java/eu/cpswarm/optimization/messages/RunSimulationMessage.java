@@ -1,7 +1,7 @@
 /**
  * File: RunSimulationMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -17,41 +17,34 @@
 package eu.cpswarm.optimization.messages;
 
 import com.google.gson.annotations.SerializedName;
+import eu.cpswarm.optimization.parameters.ParameterSet;
 
 public class RunSimulationMessage extends Message {
 
 	public static final String TYPE_NAME = "RunSimulation";
 
 	@SerializedName("SID")
-	protected String sid;
+	protected String simulationId;
 
-	@SerializedName("candidate")
-	protected String candidate;
-
-	@SerializedName("candidateType")
-	protected String candidateType;
+	@SerializedName("parameterSet")
+	protected ParameterSet parameterSet;
 
 
-	public RunSimulationMessage(String oid, String sid, String candidate, String candidateType) {
-		super(TYPE_NAME, oid);
-		this.sid = sid;
-		this.candidate = candidate;
-		this.candidateType = candidateType;
+	public RunSimulationMessage(String optimizationId, String simulationId, ParameterSet parameterSet) {
+		super(TYPE_NAME, optimizationId);
+		this.simulationId = simulationId;
+		this.parameterSet = parameterSet;
 	}
 
 	public RunSimulationMessage() {
-		this(null, null, null, null);
+		this(null, null, null);
 	}
 
-	public String getSid() {
-		return sid;
+	public String getSimulationId() {
+		return simulationId;
 	}
 
-	public String getCandidate() {
-		return candidate;
-	}
-
-	public String getCandidateType() {
-		return candidateType;
+	public ParameterSet getParameterSet() {
+		return parameterSet;
 	}
 }

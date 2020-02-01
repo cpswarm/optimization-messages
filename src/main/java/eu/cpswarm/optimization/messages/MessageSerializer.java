@@ -1,7 +1,7 @@
 /**
  * File: MessageSerializer.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -24,10 +24,9 @@ public class MessageSerializer {
 
 	protected Gson gson;
 
-
+	
 	public MessageSerializer() {
-
-		RuntimeTypeAdapterFactory<Base> typeFactory = RuntimeTypeAdapterFactory.of(Base.class)
+		RuntimeTypeAdapterFactory<Message> typeFactory = RuntimeTypeAdapterFactory.of(Message.class)
 				.registerSubtype(CancelOptimizationMessage.class,
 						CancelOptimizationMessage.TYPE_NAME)
 				.registerSubtype(GetOptimizationStateMessage.class,
@@ -42,19 +41,17 @@ public class MessageSerializer {
 				.registerSubtype(SimulationResultMessage.class, SimulationResultMessage.TYPE_NAME)
 				.registerSubtype(SimulatorConfiguredMessage.class,
 						SimulatorConfiguredMessage.TYPE_NAME)
-				.registerSubtype(StartOptimizationMessage.class, StartOptimizationMessage.TYPE_NAME)
-				.registerSubtype(ParameterSet.class, ParameterSet.TYPE_NAME)
-				.registerSubtype(Parameter.class, Parameter.TYPE_NAME);
+				.registerSubtype(StartOptimizationMessage.class, StartOptimizationMessage.TYPE_NAME);
 
 		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T extends Base> T fromJson(String json) {
+	public <T extends Message> T fromJson(String json) {
 		return (T) gson.fromJson(json, Message.class);
 	}
 
-	public String toJson(Base o) {
-		return gson.toJson(o);
+	public String toJson(Message message) {
+		return gson.toJson(message);
 	}
 }

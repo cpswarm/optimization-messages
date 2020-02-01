@@ -1,7 +1,7 @@
 /**
- * File: Base.java
+ * File: BaseStatus.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,17 +14,16 @@
  * the License.
  */
 
-package eu.cpswarm.optimization.messages;
+package eu.cpswarm.optimization.statuses;
 
 import com.google.gson.annotations.SerializedName;
 
-public abstract class Base {
+public abstract class BaseStatus {
 
     @SerializedName("type")
     protected String type;
 
-
-    public Base(String type) {
+    public BaseStatus(String type) {
         this.type = type;
     }
 
@@ -32,3 +31,4 @@ public abstract class Base {
         return type;
     }
 }
+

@@ -1,7 +1,7 @@
 /**
  * File: SimulationResultMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -23,24 +23,25 @@ public class SimulationResultMessage extends ReplyMessage {
 	public static final String TYPE_NAME = "SimulationResult";
 
 	@SerializedName("SID")
-	protected String sid;
+	protected String simulationId;
 
 	@SerializedName("fitnessValue")
 	protected double fitnessValue;
 
 
-	public SimulationResultMessage(String oid, Boolean success, String sid, double fitnessValue) {
-		super(TYPE_NAME, oid, success);
-		this.sid = sid;
+	public SimulationResultMessage(String optimizationId, boolean success, String simulationId,
+			double fitnessValue) {
+		super(TYPE_NAME, optimizationId, success);
+		this.simulationId = simulationId;
 		this.fitnessValue = fitnessValue;
 	}
-	
+
 	public SimulationResultMessage() {
 		this(null, false, null, -1);
 	}
 
-	public String getSid() {
-		return sid;
+	public String getSimulationId() {
+		return simulationId;
 	}
 
 	public double getFitnessValue() {

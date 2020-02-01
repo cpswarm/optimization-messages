@@ -1,7 +1,7 @@
 /**
  * File: SimulatorConfiguredMessage.java
  * 
- * Copyright (C) 2019 CPSwarm Project
+ * Copyright (C) 2020 CPSwarm Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -20,8 +20,8 @@ public class SimulatorConfiguredMessage extends ReplyMessage {
 
 	public static final String TYPE_NAME = "SimulatorConfigured";
 
-	public SimulatorConfiguredMessage(String oid, Boolean success) {
-		super(TYPE_NAME, oid, success);
+	public SimulatorConfiguredMessage(String optimizationId, boolean success) {
+		super(TYPE_NAME, optimizationId, success);
 	}
 	
 	public SimulatorConfiguredMessage() {
