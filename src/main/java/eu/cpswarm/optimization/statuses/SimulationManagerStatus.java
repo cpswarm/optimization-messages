@@ -18,7 +18,7 @@ package eu.cpswarm.optimization.statuses;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SimulationManagerStatus extends BaseStatus {
+public class SimulationManagerStatus extends BaseStatus implements Comparable<SimulationManagerStatus> {
 
   public static final String TYPE_NAME = "SimulationManager";
 
@@ -60,5 +60,14 @@ public class SimulationManagerStatus extends BaseStatus {
    */
   public SimulationManagerCapabilities getCapabilities() {
     return capabilities;
+  }
+
+  @Override
+  public int compareTo(SimulationManagerStatus simulationManagerStatusToCompare) {
+	  if(this.getSimulationConfigurationId()!=simulationManagerStatusToCompare.getSimulationConfigurationId()) {
+		  return -1;
+	  } else {
+		  return this.getCapabilities().compareTo(simulationManagerStatusToCompare.getCapabilities());
+	  }  
   }
 }

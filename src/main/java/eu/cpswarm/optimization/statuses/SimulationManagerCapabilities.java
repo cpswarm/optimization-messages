@@ -18,7 +18,7 @@ package eu.cpswarm.optimization.statuses;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SimulationManagerCapabilities {
+public class SimulationManagerCapabilities implements Comparable<SimulationManagerCapabilities> {
     
     @SerializedName("dimensions")
     protected int dimensions;
@@ -49,4 +49,14 @@ public class SimulationManagerCapabilities {
     public int getMaxAgents() {
       return maxAgents;
     }
+
+	@Override
+	public int compareTo(SimulationManagerCapabilities capabilitiesToCompare) {
+		if(this.getDimensions()==capabilitiesToCompare.getDimensions() || (capabilitiesToCompare.getDimensions()==1) &&
+				(this.getMaxAgents()==0 || this.getMaxAgents()>=capabilitiesToCompare.getMaxAgents())) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
 }
