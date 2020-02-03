@@ -1,5 +1,5 @@
 /**
- * File: SimulationManagerStatus.java
+ * File: SStatus.java
  * 
  * Copyright (C) 2020 CPSwarm Project
  *
@@ -18,9 +18,9 @@ package eu.cpswarm.optimization.statuses;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SimulationManagerStatus extends BaseStatus implements Comparable<SimulationManagerStatus> {
+public class SOOStatus extends BaseStatus {
 
-  public static final String TYPE_NAME = "SimulationManager";
+  public static final String TYPE_NAME = "SOO";
 
   @SerializedName("SCID")
   protected String simulationConfigurationId;
@@ -28,17 +28,12 @@ public class SimulationManagerStatus extends BaseStatus implements Comparable<Si
   @SerializedName("SID")
   protected String simulationId;
 
-  @SerializedName("capabilities")
-  protected SimulationManagerCapabilities capabilities;
-
-
-  public SimulationManagerStatus(String simulationConfigurationId, String simulationId,
-      SimulationManagerCapabilities capabilities) {
+  public SOOStatus(String simulationConfigurationId, String simulationId) {
     super(TYPE_NAME);
   }
 
-  public SimulationManagerStatus() {
-    this(null, null, null);
+  public SOOStatus() {
+    this(null, null);
   }
 
   /**
@@ -53,22 +48,5 @@ public class SimulationManagerStatus extends BaseStatus implements Comparable<Si
    */
   public String getSimulationId() {
     return simulationId;
-  }
-
-  /**
-   * @return the capabilities
-   */
-  public SimulationManagerCapabilities getCapabilities() {
-    return capabilities;
-  }
-
-  @Override
-  public int compareTo(SimulationManagerStatus simulationManagerStatusToCompare) {
-	  if(!this.getSimulationConfigurationId().isEmpty() && 
-			  this.getSimulationConfigurationId()!=simulationManagerStatusToCompare.getSimulationConfigurationId()) {
-		  return -1;
-	  } else {
-		  return this.getCapabilities().compareTo(simulationManagerStatusToCompare.getCapabilities());
-	  }  
   }
 }
