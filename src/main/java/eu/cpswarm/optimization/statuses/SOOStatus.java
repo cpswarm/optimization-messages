@@ -21,21 +21,24 @@ import com.google.gson.annotations.SerializedName;
 public class SOOStatus extends BaseStatus {
 
   public static final String TYPE_NAME = "SOO";
-
+  
   @SerializedName("SCID")
   protected String simulationConfigurationId;
 
-  @SerializedName("SID")
-  protected String simulationId;
+  @SerializedName("task_id")
+  protected String taskId;
 
   public SOOStatus(String simulationConfigurationId, String simulationId) {
     super(TYPE_NAME);
+    this.simulationConfigurationId=simulationConfigurationId;
+    this.taskId=simulationId;
   }
 
   public SOOStatus() {
     this(null, null);
   }
 
+  
   /**
    * @return the simulationConfigurationId
    */
@@ -44,9 +47,11 @@ public class SOOStatus extends BaseStatus {
   }
 
   /**
-   * @return the simulationId
+   * It can be simulation ID or optimization ID
+   * 
+   * @return the tasknId
    */
-  public String getSimulationId() {
-    return simulationId;
+  public String getTaskId() {
+    return taskId;
   }
 }

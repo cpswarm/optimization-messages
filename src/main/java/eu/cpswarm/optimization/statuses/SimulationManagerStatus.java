@@ -35,6 +35,9 @@ public class SimulationManagerStatus extends BaseStatus implements Comparable<Si
   public SimulationManagerStatus(String simulationConfigurationId, String simulationId,
       SimulationManagerCapabilities capabilities) {
     super(TYPE_NAME);
+    this.simulationConfigurationId=simulationConfigurationId;
+    this.simulationId=simulationId;
+    this.capabilities=capabilities;
   }
 
   public SimulationManagerStatus() {
