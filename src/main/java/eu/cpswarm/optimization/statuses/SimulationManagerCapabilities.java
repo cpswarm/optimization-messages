@@ -52,9 +52,9 @@ public class SimulationManagerCapabilities implements Comparable<SimulationManag
 
 	@Override
 	public int compareTo(SimulationManagerCapabilities capabilitiesToCompare) {
-		if(this.getDimensions()==capabilitiesToCompare.getDimensions() || (capabilitiesToCompare.getDimensions()==1) &&
+		if((this.getDimensions()==capabilitiesToCompare.getDimensions() || capabilitiesToCompare.getDimensions()==1) &&
 				(this.getMaxAgents()==0 || this.getMaxAgents()>=capabilitiesToCompare.getMaxAgents())) {
-			return 1;
+			return 0;
 		} else {
 			return -1;
 		}
