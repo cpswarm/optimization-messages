@@ -26,22 +26,32 @@ public class RunSimulationMessage extends Message {
 	@SerializedName("SID")
 	protected String simulationId;
 
+	@SerializedName("simulationSeed")
+	protected long simulationSeed;
+
 	@SerializedName("parameterSet")
 	protected ParameterSet parameterSet;
 
-
-	public RunSimulationMessage(String optimizationId, String simulationId, ParameterSet parameterSet) {
+	public RunSimulationMessage(String optimizationId, String simulationId, long simulationSeed,  ParameterSet parameterSet) {
 		super(TYPE_NAME, optimizationId);
 		this.simulationId = simulationId;
+		this.simulationSeed = simulationSeed;
 		this.parameterSet = parameterSet;
 	}
 
 	public RunSimulationMessage() {
-		this(null, null, null);
+		this(null, null, 0, null);
 	}
 
 	public String getSimulationId() {
 		return simulationId;
+	}
+
+	/**
+	 * @return the simulationSeed
+	 */
+	public long getSimulationSeed() {
+	  return simulationSeed;
 	}
 
 	public ParameterSet getParameterSet() {
