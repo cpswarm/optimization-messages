@@ -26,6 +26,7 @@ public class ParameterOptimizationConfiguration {
   protected int generationCount;
   protected int candidateCount;
   protected int variantCount;
+  protected double maximumFitness;
 
   protected int evolutionSeed;
   protected int evaluationSeed;
@@ -33,7 +34,7 @@ public class ParameterOptimizationConfiguration {
   protected double generationTimeoutFactor;
   protected int simulationTimeoutSeconds;
 
-  protected List<ParameterDefinition> parameters;
+  protected List<ParameterDefinition> parameterDefinitions;
 
   protected List<Candidate> candidates;
 
@@ -66,7 +67,7 @@ public class ParameterOptimizationConfiguration {
     simulationTimeoutSeconds = 120;
 
     // definitions
-    parameters = new ArrayList<>();
+    parameterDefinitions = new ArrayList<>();
 
     // candidates
     candidates = new ArrayList<>();
@@ -146,6 +147,20 @@ public class ParameterOptimizationConfiguration {
   }
 
   /**
+   * @return the maximumFitness
+   */
+  public double getMaximumFitness() {
+    return maximumFitness;
+  }
+
+  /**
+   * @param maximumFitness the maximumFitness to set
+   */
+  public void setMaximumFitness(double maximumFitness) {
+    this.maximumFitness = maximumFitness;
+  }
+
+  /**
    * @return the evolutionSeed
    */
   public int getEvolutionSeed() {
@@ -204,15 +219,15 @@ public class ParameterOptimizationConfiguration {
   /**
    * @return the parameters
    */
-  public List<ParameterDefinition> getParameters() {
-    return parameters;
+  public List<ParameterDefinition> getParameterDefinitions() {
+    return parameterDefinitions;
   }
 
   /**
-   * @param parameters the parameters to set
+   * @param parameterDefinitions the parameters to set
    */
-  public void setParameters(List<ParameterDefinition> parameters) {
-    this.parameters = parameters;
+  public void setParameterDefinitions(List<ParameterDefinition> parameterDefinitions) {
+    this.parameterDefinitions = parameterDefinitions;
   }
 
   /**
