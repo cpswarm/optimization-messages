@@ -21,7 +21,7 @@ import com.google.gson.annotations.SerializedName;
 public class SOOStatus extends BaseStatus {
 
   public static final String TYPE_NAME = "SOO";
-  
+
   @SerializedName("SCID")
   protected String simulationConfigurationId;
 
@@ -30,15 +30,15 @@ public class SOOStatus extends BaseStatus {
 
   public SOOStatus(String simulationConfigurationId, String simulationId) {
     super(TYPE_NAME);
-    this.simulationConfigurationId=simulationConfigurationId;
-    this.taskId=simulationId;
+    this.simulationConfigurationId = simulationConfigurationId;
+    this.taskId = simulationId;
   }
 
   public SOOStatus() {
     this(null, null);
   }
 
-  
+
   /**
    * @return the simulationConfigurationId
    */

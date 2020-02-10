@@ -24,7 +24,7 @@ public class OptimizationToolStatus extends BaseStatus {
 
     public static final String TYPE_NAME = "OptimizationTool";
 
-    @SerializedName("tasks")	
+    @SerializedName("tasks")
     protected List<OptimizationTaskStatus> tasks;
 
 
@@ -33,7 +33,7 @@ public class OptimizationToolStatus extends BaseStatus {
         this.tasks = tasks;
     }
 
-    public OptimizationToolStatus() {        
+    public OptimizationToolStatus() {
         this(new ArrayList<OptimizationTaskStatus>());
     }
 
@@ -41,6 +41,6 @@ public class OptimizationToolStatus extends BaseStatus {
      * @return the tasks
      */
     public List<OptimizationTaskStatus> getTasks() {
-      return tasks;
+        return tasks;
     }
 }

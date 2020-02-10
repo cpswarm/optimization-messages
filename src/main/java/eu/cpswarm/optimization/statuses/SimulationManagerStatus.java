@@ -18,7 +18,8 @@ package eu.cpswarm.optimization.statuses;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SimulationManagerStatus extends BaseStatus implements Comparable<SimulationManagerStatus> {
+public class SimulationManagerStatus extends BaseStatus
+    implements Comparable<SimulationManagerStatus> {
 
   public static final String TYPE_NAME = "SimulationManager";
 
@@ -35,9 +36,9 @@ public class SimulationManagerStatus extends BaseStatus implements Comparable<Si
   public SimulationManagerStatus(String simulationConfigurationId, String simulationId,
       SimulationManagerCapabilities capabilities) {
     super(TYPE_NAME);
-    this.simulationConfigurationId=simulationConfigurationId;
-    this.simulationId=simulationId;
-    this.capabilities=capabilities;
+    this.simulationConfigurationId = simulationConfigurationId;
+    this.simulationId = simulationId;
+    this.capabilities = capabilities;
   }
 
   public SimulationManagerStatus() {
@@ -67,11 +68,12 @@ public class SimulationManagerStatus extends BaseStatus implements Comparable<Si
 
   @Override
   public int compareTo(SimulationManagerStatus simulationManagerStatusToCompare) {
-	  if(!this.getSimulationConfigurationId().isEmpty() && 
-			  this.getSimulationConfigurationId()!=simulationManagerStatusToCompare.getSimulationConfigurationId()) {
-		  return -1;
-	  } else {
-		  return this.getCapabilities().compareTo(simulationManagerStatusToCompare.getCapabilities());
-	  }  
+    if (!this.getSimulationConfigurationId().isEmpty()
+        && this.getSimulationConfigurationId() != simulationManagerStatusToCompare
+            .getSimulationConfigurationId()) {
+      return -1;
+    } else {
+      return this.getCapabilities().compareTo(simulationManagerStatusToCompare.getCapabilities());
+    }
   }
 }

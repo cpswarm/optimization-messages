@@ -1,5 +1,5 @@
 /**
- * File: Parameter.java
+ * File: ParameterDefinition.java
  * 
  * Copyright (C) 2020 CPSwarm Project
  *
@@ -18,7 +18,7 @@ package eu.cpswarm.optimization.parameters;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Parameter {
+public class ParameterDefinition {
 
   @SerializedName("name")
   protected String name;
@@ -26,28 +26,36 @@ public class Parameter {
   @SerializedName("meta")
   protected String meta;
 
-  @SerializedName("value")
-  protected float value;
+  @SerializedName("minimum")
+  protected int minimum;
+
+  @SerializedName("maximum")
+  protected int maximum;
+
+  @SerializedName("scale")
+  protected float scale;
 
 
   /**
-   * Creates a new {@code Parameter} instance using the speicifed parameters.
+   * Creates a new {@code ParameterDefinition} instance using the speicifed parameters.
    * 
    * @param name  the name of the parameter
    * @param meta  the meta information
    * @param value the value of the parameter
    */
-  public Parameter(String name, String meta, float value) {
+  public ParameterDefinition(String name, String meta, int minimum, int maximum, float scale) {
     this.name = name;
     this.meta = meta;
-    this.value = value;
+    this.minimum = minimum;
+    this.maximum = maximum;
+    this.scale = scale;
   }
 
   /**
-   * Creates a new {@code Parameter} instance.
+   * Creates a new {@code ParameterDefinition} instance.
    */
-  public Parameter() {
-    this(null, null, 0);
+  public ParameterDefinition() {
+    this(null, null, 0, 0, 0);
   }
 
   /**
@@ -69,11 +77,23 @@ public class Parameter {
   }
 
   /**
-   * Gets the value.
-   * 
-   * @return the value
+   * @return the minimum
    */
-  public float getValue() {
-    return value;
+  public int getMinimum() {
+    return minimum;
+  }
+
+  /**
+   * @return the maximum
+   */
+  public int getMaximum() {
+    return maximum;
+  }
+
+  /**
+   * @return the scale
+   */
+  public float getScale() {
+    return scale;
   }
 }

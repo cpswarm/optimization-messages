@@ -17,19 +17,21 @@
 package eu.cpswarm.optimization.messages;
 
 import com.google.gson.annotations.SerializedName;
+import eu.cpswarm.optimization.parameters.ParameterOptimizationConfiguration;
 
 public class StartOptimizationMessage extends Message {
 
 	public static final String TYPE_NAME = "StartOptimization";
 
 	@SerializedName("configuration")
-	protected String configuration;
+	protected ParameterOptimizationConfiguration configuration;
 
 	@SerializedName("SCID")
 	protected String simulationConfigurationId;
 
 
-	public StartOptimizationMessage(String optimizationId, String configuration, String simulationConfigurationId) {
+	public StartOptimizationMessage(String optimizationId,
+			ParameterOptimizationConfiguration configuration, String simulationConfigurationId) {
 		super(TYPE_NAME, optimizationId);
 		this.configuration = configuration;
 		this.simulationConfigurationId = simulationConfigurationId;
@@ -39,7 +41,7 @@ public class StartOptimizationMessage extends Message {
 		this(null, null, null);
 	}
 
-	public String getConfiguration() {
+	public ParameterOptimizationConfiguration getConfiguration() {
 		return configuration;
 	}
 

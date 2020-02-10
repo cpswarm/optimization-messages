@@ -16,8 +16,10 @@
 
 package eu.cpswarm.optimization.messages;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
-import eu.cpswarm.optimization.parameters.ParameterSet;
+import eu.cpswarm.optimization.parameters.Parameter;
+import eu.cpswarm.optimization.parameters.ParameterOptimizationConfiguration;
 import eu.cpswarm.optimization.statuses.OptimizationStatusType;
 
 public class OptimizationStatusMessage extends Message {
@@ -33,22 +35,26 @@ public class OptimizationStatusMessage extends Message {
 	@SerializedName("bestFitnessValue")
 	protected double bestFitnessValue;
 
-	@SerializedName("bestParameterSet")
-	protected ParameterSet bestParameterSet;
+	@SerializedName("bestParameters")
+	protected List<Parameter> bestParameters;
 
+	@SerializedName("configuration")
+	protected ParameterOptimizationConfiguration configuration;
 
+	
 	public OptimizationStatusMessage(String optimizationId, double progress,
 			OptimizationStatusType statusType, double bestFitnessValue,
-			ParameterSet bestParameterSet) {
+			List<Parameter> bestParameters, ParameterOptimizationConfiguration configuration) {
 		super(TYPE_NAME, optimizationId);
 		this.progress = progress;
 		this.statusType = statusType;
 		this.bestFitnessValue = bestFitnessValue;
-		this.bestParameterSet = bestParameterSet;
+		this.bestParameters = bestParameters;
+		this.configuration = configuration;
 	}
 
 	public OptimizationStatusMessage() {
-		this(null, -1, OptimizationStatusType.NONE, -1, null);
+		this(null, -1, OptimizationStatusType.NONE, -1, null, null);
 	}
 
 	public OptimizationStatusType getStatusType() {
@@ -63,7 +69,14 @@ public class OptimizationStatusMessage extends Message {
 		return bestFitnessValue;
 	}
 
-	public ParameterSet getBestParameterSet() {
-		return bestParameterSet;
+	public List<Parameter> getBestParameters() {
+		return bestParameters;
+	}
+
+	/**
+	 * @return the configuration
+	 */
+	public ParameterOptimizationConfiguration getConfiguration() {
+		return configuration;
 	}
 }

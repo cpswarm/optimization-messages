@@ -16,8 +16,10 @@
 
 package eu.cpswarm.optimization.messages;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
-import eu.cpswarm.optimization.parameters.ParameterSet;
+import eu.cpswarm.optimization.parameters.Parameter;;
 
 public class RunSimulationMessage extends Message {
 
@@ -29,18 +31,20 @@ public class RunSimulationMessage extends Message {
 	@SerializedName("simulationSeed")
 	protected long simulationSeed;
 
-	@SerializedName("parameterSet")
-	protected ParameterSet parameterSet;
+	@SerializedName("parameters")
+	protected List<Parameter> parameters;
 
-	public RunSimulationMessage(String optimizationId, String simulationId, long simulationSeed,  ParameterSet parameterSet) {
+
+	public RunSimulationMessage(String optimizationId, String simulationId, long simulationSeed,
+			List<Parameter> parameters) {
 		super(TYPE_NAME, optimizationId);
 		this.simulationId = simulationId;
 		this.simulationSeed = simulationSeed;
-		this.parameterSet = parameterSet;
+		this.parameters = parameters;
 	}
 
 	public RunSimulationMessage() {
-		this(null, null, 0, null);
+		this(null, null, 0, new ArrayList<>());
 	}
 
 	public String getSimulationId() {
@@ -51,10 +55,15 @@ public class RunSimulationMessage extends Message {
 	 * @return the simulationSeed
 	 */
 	public long getSimulationSeed() {
-	  return simulationSeed;
+		return simulationSeed;
 	}
 
-	public ParameterSet getParameterSet() {
-		return parameterSet;
+	/**
+	 * Gets the parameters.
+	 * 
+	 * @return the parameters
+	 */
+	public List<Parameter> getParameters() {
+		return parameters;
 	}
 }
