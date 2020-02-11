@@ -23,47 +23,47 @@ import eu.cpswarm.optimization.parameters.Parameter;;
 
 public class RunSimulationMessage extends Message {
 
-	public static final String TYPE_NAME = "RunSimulation";
+  public static final String TYPE_NAME = "RunSimulation";
 
-	@SerializedName("SID")
-	protected String simulationId;
+  @SerializedName("SID")
+  protected String simulationId;
 
-	@SerializedName("simulationSeed")
-	protected long simulationSeed;
+  @SerializedName("simulationSeed")
+  protected long simulationSeed;
 
-	@SerializedName("parameters")
-	protected List<Parameter> parameters;
+  @SerializedName("parameters")
+  protected List<Parameter> parameters;
 
 
-	public RunSimulationMessage(String optimizationId, String simulationId, long simulationSeed,
-			List<Parameter> parameters) {
-		super(TYPE_NAME, optimizationId);
-		this.simulationId = simulationId;
-		this.simulationSeed = simulationSeed;
-		this.parameters = parameters;
-	}
+  public RunSimulationMessage(String optimizationId, String simulationId, long simulationSeed,
+      List<Parameter> parameters) {
+    super(TYPE_NAME, optimizationId);
+    this.simulationId = simulationId;
+    this.simulationSeed = simulationSeed;
+    this.parameters = parameters;
+  }
 
-	public RunSimulationMessage() {
-		this(null, null, 0, new ArrayList<>());
-	}
+  public RunSimulationMessage() {
+    this(null, null, 0, new ArrayList<>());
+  }
 
-	public String getSimulationId() {
-		return simulationId;
-	}
+  public String getSimulationId() {
+    return simulationId;
+  }
 
-	/**
-	 * @return the simulationSeed
-	 */
-	public long getSimulationSeed() {
-		return simulationSeed;
-	}
+  /**
+   * @return the simulationSeed
+   */
+  public long getSimulationSeed() {
+    return simulationSeed;
+  }
 
-	/**
-	 * Gets the parameters.
-	 * 
-	 * @return the parameters
-	 */
-	public List<Parameter> getParameters() {
-		return parameters;
-	}
+  /**
+   * Gets the parameters.
+   * 
+   * @return the parameters
+   */
+  public List<Parameter> getParameters() {
+    return parameters;
+  }
 }

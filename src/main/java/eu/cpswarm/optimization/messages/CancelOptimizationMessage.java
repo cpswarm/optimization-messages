@@ -18,14 +18,14 @@ package eu.cpswarm.optimization.messages;
 
 public class CancelOptimizationMessage extends Message {
 
-	public static final String TYPE_NAME = "CancelOptimization";
+  public static final String TYPE_NAME = "CancelOptimization";
 
 
-	public CancelOptimizationMessage(String optimizationId) {
-		super(TYPE_NAME, optimizationId);
-	}
+  public CancelOptimizationMessage(String optimizationId) {
+    super(TYPE_NAME, optimizationId);
+  }
 
-	public CancelOptimizationMessage() {
-		this(null);
-	}
+  public CancelOptimizationMessage() {
+    this(null);
+  }
 }

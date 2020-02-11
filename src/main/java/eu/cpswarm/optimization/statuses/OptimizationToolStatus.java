@@ -22,25 +22,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class OptimizationToolStatus extends BaseStatus {
 
-    public static final String TYPE_NAME = "OptimizationTool";
+  public static final String TYPE_NAME = "OptimizationTool";
 
-    @SerializedName("tasks")
-    protected List<OptimizationTaskStatus> tasks;
+  @SerializedName("tasks")
+  protected List<OptimizationTaskStatus> tasks;
 
 
-    public OptimizationToolStatus(List<OptimizationTaskStatus> tasks) {
-        super(TYPE_NAME);
-        this.tasks = tasks;
-    }
+  public OptimizationToolStatus(List<OptimizationTaskStatus> tasks) {
+    super(TYPE_NAME);
+    this.tasks = tasks;
+  }
 
-    public OptimizationToolStatus() {
-        this(new ArrayList<OptimizationTaskStatus>());
-    }
+  public OptimizationToolStatus() {
+    this(new ArrayList<OptimizationTaskStatus>());
+  }
 
-    /**
-     * @return the tasks
-     */
-    public List<OptimizationTaskStatus> getTasks() {
-        return tasks;
-    }
+  /**
+   * @return the tasks
+   */
+  public List<OptimizationTaskStatus> getTasks() {
+    return tasks;
+  }
 }

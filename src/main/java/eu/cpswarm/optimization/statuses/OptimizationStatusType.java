@@ -19,32 +19,27 @@ package eu.cpswarm.optimization.statuses;
 import com.google.gson.annotations.SerializedName;
 
 public enum OptimizationStatusType {
-    // No status, in reality should not occur
-    @SerializedName("None")
-    NONE,
+  // No status, in reality should not occur
+  @SerializedName("None")
+  NONE,
 
-    // OT receives a bad configuration for replying to
-    // StartOptimization
-    @SerializedName("ErrorBadConfiguration")
-    ERROR_BAD_CONFIGURATION,
+  // task has started but no results available
+  @SerializedName("Started")
+  STARTED,
 
-    // optimization is actived for replying to StartOptimization received in first time
-    @SerializedName("Started")
-    STARTED,
+  // running for some time, with a progress
+  @SerializedName("Running")
+  RUNNING,
 
-    // running for some time, with a progress
-    @SerializedName("Running")
-    RUNNING,
+  // error occurs, optimization is not ongoing
+  @SerializedName("ErrorOptimizationFailed")
+  ERROR,
 
-    // error occurs, optimization is not ongoing
-    @SerializedName("ErrorOptimizationFailed")
-    ERROR_OPTIMIZAZION_FAILED,
+  // request from SOO to cancel it without error, stopped
+  @SerializedName("Cancelled")
+  CANCELLED,
 
-    // request from SOO to cancel it without error, stopped
-    @SerializedName("Cancelled")
-    CANCELLED,
-
-    // completed
-    @SerializedName("Completed")
-    COMPLETED
+  // completed
+  @SerializedName("Complete")
+  COMPLETE
 }

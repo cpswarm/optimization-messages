@@ -24,59 +24,74 @@ import eu.cpswarm.optimization.statuses.OptimizationStatusType;
 
 public class OptimizationStatusMessage extends Message {
 
-	public static final String TYPE_NAME = "OptimizationStatus";
+  public static final String TYPE_NAME = "OptimizationStatus";
 
-	@SerializedName("statusType")
-	protected OptimizationStatusType statusType;
+  @SerializedName("statusType")
+  protected OptimizationStatusType statusType;
 
-	@SerializedName("progress")
-	protected double progress;
+  @SerializedName("bestFitness")
+  protected double bestFitness;
 
-	@SerializedName("bestFitnessValue")
-	protected double bestFitnessValue;
+  @SerializedName("generation")
+  protected int generation;
 
-	@SerializedName("bestParameters")
-	protected List<Parameter> bestParameters;
+  @SerializedName("maxGenerations")
+  protected int maximumGenerations;
 
-	@SerializedName("configuration")
-	protected ParameterOptimizationConfiguration configuration;
+  @SerializedName("bestParameters")
+  protected List<Parameter> bestParameters;
 
-	
-	public OptimizationStatusMessage(String optimizationId, double progress,
-			OptimizationStatusType statusType, double bestFitnessValue,
-			List<Parameter> bestParameters, ParameterOptimizationConfiguration configuration) {
-		super(TYPE_NAME, optimizationId);
-		this.progress = progress;
-		this.statusType = statusType;
-		this.bestFitnessValue = bestFitnessValue;
-		this.bestParameters = bestParameters;
-		this.configuration = configuration;
-	}
+  @SerializedName("configuration")
+  protected ParameterOptimizationConfiguration configuration;
 
-	public OptimizationStatusMessage() {
-		this(null, -1, OptimizationStatusType.NONE, -1, null, null);
-	}
 
-	public OptimizationStatusType getStatusType() {
-		return statusType;
-	}
+  public OptimizationStatusMessage(String optimizationId, OptimizationStatusType statusType,
+      double bestFitness, int generation, int maximumGenerations, List<Parameter> bestParameters,
+      ParameterOptimizationConfiguration configuration) {
+    super(TYPE_NAME, optimizationId);
 
-	public double getProgress() {
-		return progress;
-	}
+    this.statusType = statusType;
+    this.bestFitness = bestFitness;
+    this.generation = generation;
+    this.maximumGenerations = maximumGenerations;
+    this.bestParameters = bestParameters;
+    this.configuration = configuration;
+  }
 
-	public double getBestFitnessValue() {
-		return bestFitnessValue;
-	}
+  public OptimizationStatusMessage() {
+    this(null, OptimizationStatusType.NONE, -1, 0, 0, null, null);
+  }
 
-	public List<Parameter> getBestParameters() {
-		return bestParameters;
-	}
+  public OptimizationStatusType getStatusType() {
+    return statusType;
+  }
 
-	/**
-	 * @return the configuration
-	 */
-	public ParameterOptimizationConfiguration getConfiguration() {
-		return configuration;
-	}
+  public double getBestFitness() {
+    return bestFitness;
+  }
+
+  /**
+   * @return the generation
+   */
+  public int getGeneration() {
+    return generation;
+  }
+
+  /**
+   * @return the maximumGenerations
+   */
+  public int getMaximumGenerations() {
+    return maximumGenerations;
+  }
+
+  public List<Parameter> getBestParameters() {
+    return bestParameters;
+  }
+
+  /**
+   * @return the configuration
+   */
+  public ParameterOptimizationConfiguration getConfiguration() {
+    return configuration;
+  }
 }

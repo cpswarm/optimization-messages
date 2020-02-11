@@ -19,67 +19,68 @@ package eu.cpswarm.optimization.statuses;
 import com.google.gson.annotations.SerializedName;
 
 public class OptimizationTaskStatus {
-  
-    @SerializedName("OID")	
-    protected String optimizationId;
 
-    @SerializedName("status_type")
-    protected OptimizationStatusType statusType;
+  @SerializedName("OID")
+  protected String optimizationId;
 
-    @SerializedName("best_fitness")	
-    protected double bestFitness;
+  @SerializedName("statusType")
+  protected OptimizationStatusType statusType;
 
-    @SerializedName("generation")	
-    protected int generation;
+  @SerializedName("bestFitness")
+  protected double bestFitness;
 
-    @SerializedName("max_generations")	
-    protected int maximumGenerations;
+  @SerializedName("generation")
+  protected int generation;
+
+  @SerializedName("maxGenerations")
+  protected int maximumGenerations;
 
 
-    public OptimizationTaskStatus(String optimizationId, OptimizationStatusType statusType, double bestFitness, int generation, int maximumGenerations ) {
-        this.optimizationId = optimizationId;
-        this.statusType = statusType;
-        this.bestFitness = bestFitness;
-        this.generation = generation;
-        this.maximumGenerations = maximumGenerations;
-    }
+  public OptimizationTaskStatus(String optimizationId, OptimizationStatusType statusType,
+      double bestFitness, int generation, int maximumGenerations) {
+    this.optimizationId = optimizationId;
+    this.statusType = statusType;
+    this.bestFitness = bestFitness;
+    this.generation = generation;
+    this.maximumGenerations = maximumGenerations;
+  }
 
-    public OptimizationTaskStatus() {
-        this(null, OptimizationStatusType.NONE, 0, 0, 0);
-    }
+  public OptimizationTaskStatus() {
+    this(null, OptimizationStatusType.NONE, 0, 0, 0);
+  }
 
-    /**
-     * @return the optimizationId
-     */
-    public String getOptimizationId() {
-      return optimizationId;
-    }
+  /**
+   * @return the optimizationId
+   */
+  public String getOptimizationId() {
+    return optimizationId;
+  }
 
-    /**
-     * @return the statusType
-     */
-    public OptimizationStatusType getStatusType() {
-      return statusType;
-    }
+  /**
+   * @return the statusType
+   */
+  public OptimizationStatusType getStatusType() {
+    return statusType;
+  }
 
-    /**
-     * @return the bestFitness
-     */
-    public double getBestFitness() {
-      return bestFitness;
-    }
+  /**
+   * @return the bestFitness
+   */
+  public double getBestFitness() {
+    return bestFitness;
+  }
 
-    /**
-     * @return the generation
-     */
-    public int getGeneration() {
-      return generation;
-    }
+  /**
+   * @return the generation
+   */
+  public int getGeneration() {
+    return generation;
+  }
 
-    /**
-     * @return the maximumGenerations
-     */
-    public int getMaximumGenerations() {
-      return maximumGenerations;
-    }
+  /**
+   * @return the maximumGenerations
+   */
+  public int getMaximumGenerations() {
+    return maximumGenerations;
+  }
 }

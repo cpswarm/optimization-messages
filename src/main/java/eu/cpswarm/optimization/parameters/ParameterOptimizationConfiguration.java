@@ -23,7 +23,7 @@ public class ParameterOptimizationConfiguration {
 
   // @SerializedName("")
   protected int generation;
-  protected int generationCount;
+  protected int maximumGeneration;
   protected int candidateCount;
   protected int variantCount;
   protected double maximumFitness;
@@ -54,7 +54,7 @@ public class ParameterOptimizationConfiguration {
 
     // basic
     generation = 0;
-    generationCount = 100;
+    maximumGeneration = 100;
     candidateCount = 100;
     variantCount = 10;
 
@@ -103,18 +103,18 @@ public class ParameterOptimizationConfiguration {
   }
 
   /**
-   * @return the generationCount
+   * @return the maximumGeneration
    */
-  public int getGenerationCount() {
-    return generationCount;
+  public int getMaximumGeneration() {
+    return maximumGeneration;
   }
 
   /**
    * 
-   * @param generationCount
+   * @param maximumGeneration
    */
-  public void setGenerationCount(int generationCount) {
-    this.generationCount = generationCount;
+  public void setMaximumGeneration(int maximumGeneration) {
+    this.maximumGeneration = maximumGeneration;
   }
 
   /**

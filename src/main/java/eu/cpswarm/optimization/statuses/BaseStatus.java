@@ -20,15 +20,15 @@ import com.google.gson.annotations.SerializedName;
 
 public abstract class BaseStatus {
 
-    @SerializedName("type")
-    protected String type;
+  @SerializedName("type")
+  protected String type;
 
-    public BaseStatus(String type) {
-        this.type = type;
-    }
+  public BaseStatus(String type) {
+    this.type = type;
+  }
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 }
 

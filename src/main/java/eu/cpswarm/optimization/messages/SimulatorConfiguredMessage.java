@@ -18,13 +18,13 @@ package eu.cpswarm.optimization.messages;
 
 public class SimulatorConfiguredMessage extends ReplyMessage {
 
-	public static final String TYPE_NAME = "SimulatorConfigured";
+  public static final String TYPE_NAME = "SimulatorConfigured";
 
-	public SimulatorConfiguredMessage(String optimizationId, boolean success) {
-		super(TYPE_NAME, optimizationId, success);
-	}
-	
-	public SimulatorConfiguredMessage() {
-		this(null, false);
-	}
+  public SimulatorConfiguredMessage(String optimizationId, boolean success) {
+    super(TYPE_NAME, optimizationId, success);
+  }
+
+  public SimulatorConfiguredMessage() {
+    this(null, false);
+  }
 }

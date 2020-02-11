@@ -19,44 +19,46 @@ package eu.cpswarm.optimization.statuses;
 import com.google.gson.annotations.SerializedName;
 
 public class SimulationManagerCapabilities implements Comparable<SimulationManagerCapabilities> {
-    
-    @SerializedName("dimensions")
-    protected int dimensions;
-    
-    @SerializedName("max_agents")	
-    protected int maxAgents;
+
+  @SerializedName("dimensions")
+  protected int dimensions;
+
+  @SerializedName("maxAgents")
+  protected int maxAgents;
 
 
-    public SimulationManagerCapabilities(int dimensions, int maxAgents) {
-        this.dimensions = dimensions;
-        this.maxAgents = maxAgents;
+  public SimulationManagerCapabilities(int dimensions, int maxAgents) {
+    this.dimensions = dimensions;
+    this.maxAgents = maxAgents;
+  }
+
+  public SimulationManagerCapabilities() {
+    this(0, 0);
+  }
+
+  /**
+   * @return the dimensions
+   */
+  public int getDimensions() {
+    return dimensions;
+  }
+
+  /**
+   * @return the maxAgents
+   */
+  public int getMaxAgents() {
+    return maxAgents;
+  }
+
+  @Override
+  public int compareTo(SimulationManagerCapabilities capabilitiesToCompare) {
+    if ((this.getDimensions() == capabilitiesToCompare.getDimensions()
+        || capabilitiesToCompare.getDimensions() == 1)
+        && (this.getMaxAgents() == 0
+            || this.getMaxAgents() >= capabilitiesToCompare.getMaxAgents())) {
+      return 0;
+    } else {
+      return -1;
     }
-
-    public SimulationManagerCapabilities() {
-      this(0, 0);
-    }
-
-    /**
-     * @return the dimensions
-     */
-    public int getDimensions() {
-      return dimensions;
-    }
-
-    /**
-     * @return the maxAgents
-     */
-    public int getMaxAgents() {
-      return maxAgents;
-    }
-
-	@Override
-	public int compareTo(SimulationManagerCapabilities capabilitiesToCompare) {
-		if((this.getDimensions()==capabilitiesToCompare.getDimensions() || capabilitiesToCompare.getDimensions()==1) &&
-				(this.getMaxAgents()==0 || this.getMaxAgents()>=capabilitiesToCompare.getMaxAgents())) {
-			return 0;
-		} else {
-			return -1;
-		}
-	}
+  }
 }

@@ -21,31 +21,31 @@ import eu.cpswarm.optimization.parameters.ParameterOptimizationConfiguration;
 
 public class StartOptimizationMessage extends Message {
 
-	public static final String TYPE_NAME = "StartOptimization";
+  public static final String TYPE_NAME = "StartOptimization";
 
-	@SerializedName("configuration")
-	protected ParameterOptimizationConfiguration configuration;
+  @SerializedName("configuration")
+  protected ParameterOptimizationConfiguration configuration;
 
-	@SerializedName("SCID")
-	protected String simulationConfigurationId;
+  @SerializedName("SCID")
+  protected String simulationConfigurationId;
 
 
-	public StartOptimizationMessage(String optimizationId,
-			ParameterOptimizationConfiguration configuration, String simulationConfigurationId) {
-		super(TYPE_NAME, optimizationId);
-		this.configuration = configuration;
-		this.simulationConfigurationId = simulationConfigurationId;
-	}
+  public StartOptimizationMessage(String optimizationId,
+      ParameterOptimizationConfiguration configuration, String simulationConfigurationId) {
+    super(TYPE_NAME, optimizationId);
+    this.configuration = configuration;
+    this.simulationConfigurationId = simulationConfigurationId;
+  }
 
-	public StartOptimizationMessage() {
-		this(null, null, null);
-	}
+  public StartOptimizationMessage() {
+    this(null, null, null);
+  }
 
-	public ParameterOptimizationConfiguration getConfiguration() {
-		return configuration;
-	}
+  public ParameterOptimizationConfiguration getConfiguration() {
+    return configuration;
+  }
 
-	public String getSimulationConfigurationId() {
-		return simulationConfigurationId;
-	}
+  public String getSimulationConfigurationId() {
+    return simulationConfigurationId;
+  }
 }

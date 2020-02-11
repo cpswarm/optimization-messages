@@ -22,25 +22,25 @@ import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 
 public class StatusSerializer {
 
-	protected Gson gson;
+  protected Gson gson;
 
 
-	public StatusSerializer() {
-		RuntimeTypeAdapterFactory<BaseStatus> typeFactory = RuntimeTypeAdapterFactory
-				.of(BaseStatus.class)
-				.registerSubtype(OptimizationToolStatus.class, OptimizationToolStatus.TYPE_NAME)
-				.registerSubtype(SimulationManagerStatus.class, SimulationManagerStatus.TYPE_NAME)
-				.registerSubtype(SOOStatus.class, SOOStatus.TYPE_NAME);
+  public StatusSerializer() {
+    RuntimeTypeAdapterFactory<BaseStatus> typeFactory =
+        RuntimeTypeAdapterFactory.of(BaseStatus.class)
+            .registerSubtype(OptimizationToolStatus.class, OptimizationToolStatus.TYPE_NAME)
+            .registerSubtype(SimulationManagerStatus.class, SimulationManagerStatus.TYPE_NAME)
+            .registerSubtype(SOOStatus.class, SOOStatus.TYPE_NAME);
 
-		gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
-	}
+    gson = new GsonBuilder().registerTypeAdapterFactory(typeFactory).create();
+  }
 
-	@SuppressWarnings("unchecked")
-	public <T extends BaseStatus> T fromJson(String json) {
-		return (T) gson.fromJson(json, BaseStatus.class);
-	}
+  @SuppressWarnings("unchecked")
+  public <T extends BaseStatus> T fromJson(String json) {
+    return (T) gson.fromJson(json, BaseStatus.class);
+  }
 
-	public String toJson(BaseStatus o) {
-		return gson.toJson(o);
-	}
+  public String toJson(BaseStatus o) {
+    return gson.toJson(o);
+  }
 }

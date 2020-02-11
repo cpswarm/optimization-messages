@@ -18,14 +18,14 @@ package eu.cpswarm.optimization.messages;
 
 public class GetOptimizationStatusMessage extends Message {
 
-	public static final String TYPE_NAME = "GetOptimizationStatus";
+  public static final String TYPE_NAME = "GetOptimizationStatus";
 
 
-	public GetOptimizationStatusMessage(String optimizationId) {
-		super(TYPE_NAME, optimizationId);
-	}
-	
-	public GetOptimizationStatusMessage() {
-		this(null);
-	}
+  public GetOptimizationStatusMessage(String optimizationId) {
+    super(TYPE_NAME, optimizationId);
+  }
+
+  public GetOptimizationStatusMessage() {
+    this(null);
+  }
 }

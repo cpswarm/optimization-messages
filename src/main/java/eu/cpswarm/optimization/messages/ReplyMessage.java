@@ -20,16 +20,16 @@ import com.google.gson.annotations.SerializedName;
 
 public abstract class ReplyMessage extends Message {
 
-	@SerializedName("success")
-	protected boolean success;
+  @SerializedName("success")
+  protected boolean success;
 
 
-	public ReplyMessage(String type, String optimizationId, boolean success) {
-		super(type, optimizationId);
-		this.success = success;
-	}
+  public ReplyMessage(String type, String optimizationId, boolean success) {
+    super(type, optimizationId);
+    this.success = success;
+  }
 
-	public boolean getSuccess() {
-		return success;
-	}
+  public boolean getSuccess() {
+    return success;
+  }
 }

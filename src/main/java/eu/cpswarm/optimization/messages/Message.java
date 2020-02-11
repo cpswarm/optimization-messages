@@ -20,23 +20,23 @@ import com.google.gson.annotations.SerializedName;
 
 public abstract class Message {
 
-    @SerializedName("type")
-    protected String type;
+  @SerializedName("type")
+  protected String type;
 
-	@SerializedName("OID")
-	protected String optimizationId;
+  @SerializedName("OID")
+  protected String optimizationId;
 
 
-	public Message(String type, String optimizationId) {
-		this.type = type;
-		this.optimizationId = optimizationId;
-	}
+  public Message(String type, String optimizationId) {
+    this.type = type;
+    this.optimizationId = optimizationId;
+  }
 
-	public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-	public String getOptimizationId() {
-		return optimizationId;
-	}
+  public String getOptimizationId() {
+    return optimizationId;
+  }
 }

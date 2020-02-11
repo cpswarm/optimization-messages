@@ -20,31 +20,31 @@ import com.google.gson.annotations.SerializedName;
 
 public class SimulationResultMessage extends ReplyMessage {
 
-	public static final String TYPE_NAME = "SimulationResult";
+  public static final String TYPE_NAME = "SimulationResult";
 
-	@SerializedName("SID")
-	protected String simulationId;
+  @SerializedName("SID")
+  protected String simulationId;
 
-	@SerializedName("fitnessValue")
-	protected double fitnessValue;
+  @SerializedName("fitnessValue")
+  protected double fitnessValue;
 
 
-	public SimulationResultMessage(String optimizationId, boolean success, String simulationId,
-			double fitnessValue) {
-		super(TYPE_NAME, optimizationId, success);
-		this.simulationId = simulationId;
-		this.fitnessValue = fitnessValue;
-	}
+  public SimulationResultMessage(String optimizationId, boolean success, String simulationId,
+      double fitnessValue) {
+    super(TYPE_NAME, optimizationId, success);
+    this.simulationId = simulationId;
+    this.fitnessValue = fitnessValue;
+  }
 
-	public SimulationResultMessage() {
-		this(null, false, null, -1);
-	}
+  public SimulationResultMessage() {
+    this(null, false, null, -1);
+  }
 
-	public String getSimulationId() {
-		return simulationId;
-	}
+  public String getSimulationId() {
+    return simulationId;
+  }
 
-	public double getFitnessValue() {
-		return fitnessValue;
-	}
+  public double getFitnessValue() {
+    return fitnessValue;
+  }
 }

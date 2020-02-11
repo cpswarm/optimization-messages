@@ -25,7 +25,7 @@ public class SOOStatus extends BaseStatus {
   @SerializedName("SCID")
   protected String simulationConfigurationId;
 
-  @SerializedName("task_id")
+  @SerializedName("taskId")
   protected String taskId;
 
   public SOOStatus(String simulationConfigurationId, String simulationId) {
