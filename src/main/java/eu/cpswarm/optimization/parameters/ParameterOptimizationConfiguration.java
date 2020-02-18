@@ -28,11 +28,12 @@ public class ParameterOptimizationConfiguration {
   protected int variantCount;
   protected double maximumFitness;
 
-  protected int evolutionSeed;
-  protected int evaluationSeed;
+  protected long evolutionSeed;
+  protected long evaluationSeed;
 
   protected double generationTimeoutFactor;
   protected int simulationTimeoutSeconds;
+  protected int taskKeepAliveSeconds;
 
   protected List<ParameterDefinition> parameterDefinitions;
 
@@ -65,6 +66,7 @@ public class ParameterOptimizationConfiguration {
     // time outs
     generationTimeoutFactor = 2;
     simulationTimeoutSeconds = 120;
+    taskKeepAliveSeconds = 300;
 
     // definitions
     parameterDefinitions = new ArrayList<>();
@@ -85,6 +87,50 @@ public class ParameterOptimizationConfiguration {
     mutatedWeight = 0.2;
     crossedWeight = 0.2;
     newWeight = 0.2;
+  }
+
+  /**
+   * Creates a new {@code ParameterOptimizationConfiguration} instance as a
+   * shallow copy of the source instance.
+   * 
+   * @param source the {@code ParameterOptimizationConfiguration} to copy
+   */
+  public ParameterOptimizationConfiguration(ParameterOptimizationConfiguration source) {
+
+    // basic
+    generation = source.generation;
+    maximumGeneration = source.maximumGeneration;
+    candidateCount = source.candidateCount;
+    variantCount = source.variantCount;
+
+    // seeds
+    evolutionSeed = source.evolutionSeed;
+    evaluationSeed = source.evaluationSeed;
+
+    // time outs
+    generationTimeoutFactor = source.generationTimeoutFactor;
+    simulationTimeoutSeconds = source.simulationTimeoutSeconds;
+    taskKeepAliveSeconds = source.taskKeepAliveSeconds;
+
+    // definitions
+    parameterDefinitions = source.parameterDefinitions;
+
+    // candidates
+    candidates = source.candidates;
+
+    // ParameterSetOp parameters
+    directMutationProbability = source.directMutationProbability;
+    directMutationSeverity = source.directMutationSeverity;
+    proportionalMutationProbability = source.proportionalMutationProbability;
+    proportionalMutationSeverity = source.proportionalMutationSeverity;
+
+    // NNGA parameters
+    skewFactor = source.skewFactor;
+    eliteWeight = source.eliteWeight;
+    randomWeight = source.randomWeight;
+    mutatedWeight = source.mutatedWeight;
+    crossedWeight = source.crossedWeight;
+    newWeight = source.newWeight;
   }
 
   /**
@@ -163,28 +209,28 @@ public class ParameterOptimizationConfiguration {
   /**
    * @return the evolutionSeed
    */
-  public int getEvolutionSeed() {
+  public long getEvolutionSeed() {
     return evolutionSeed;
   }
 
   /**
    * @param evolutionSeed the evolutionSeed to set
    */
-  public void setEvolutionSeed(int evolutionSeed) {
+  public void setEvolutionSeed(long evolutionSeed) {
     this.evolutionSeed = evolutionSeed;
   }
 
   /**
    * @return the evaluationSeed
    */
-  public int getEvaluationSeed() {
+  public long getEvaluationSeed() {
     return evaluationSeed;
   }
 
   /**
    * @param evaluationSeed the evaluationSeed to set
    */
-  public void setEvaluationSeed(int evaluationSeed) {
+  public void setEvaluationSeed(long evaluationSeed) {
     this.evaluationSeed = evaluationSeed;
   }
 
@@ -214,6 +260,20 @@ public class ParameterOptimizationConfiguration {
    */
   public void setSimulationTimeoutSeconds(int simulationTimeoutSeconds) {
     this.simulationTimeoutSeconds = simulationTimeoutSeconds;
+  }
+
+  /**
+   * @return the taskKeepAliveSeconds
+   */
+  public int getTaskKeepAliveSeconds() {
+    return taskKeepAliveSeconds;
+  }
+
+  /**
+   * @param taskKeepAliveSeconds the taskKeepAliveSeconds to set
+   */
+  public void setTaskKeepAliveSeconds(int taskKeepAliveSeconds) {
+    this.taskKeepAliveSeconds = taskKeepAliveSeconds;
   }
 
   /**
@@ -280,7 +340,8 @@ public class ParameterOptimizationConfiguration {
   }
 
   /**
-   * @param proportionalMutationProbability the proportionalMutationProbability to set
+   * @param proportionalMutationProbability the proportionalMutationProbability to
+   *                                        set
    */
   public void setProportionalMutationProbability(double proportionalMutationProbability) {
     this.proportionalMutationProbability = proportionalMutationProbability;
