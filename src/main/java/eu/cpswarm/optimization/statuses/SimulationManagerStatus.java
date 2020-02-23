@@ -68,7 +68,7 @@ public class SimulationManagerStatus extends BaseStatus
 
   @Override
   public int compareTo(SimulationManagerStatus simulationManagerStatusToCompare) {
-    if (!this.getSimulationConfigurationId().isEmpty()
+    if ((this.getSimulationConfigurationId()!=null)
         && !this.getSimulationConfigurationId().equals(simulationManagerStatusToCompare
             .getSimulationConfigurationId())) {
       return -1;
