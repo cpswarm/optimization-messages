@@ -58,6 +58,7 @@ public class ParameterOptimizationConfiguration {
     maximumGeneration = 100;
     candidateCount = 100;
     variantCount = 10;
+    maximumFitness = Double.MAX_VALUE;
 
     // seeds
     evolutionSeed = 0;
@@ -102,6 +103,7 @@ public class ParameterOptimizationConfiguration {
     maximumGeneration = source.maximumGeneration;
     candidateCount = source.candidateCount;
     variantCount = source.variantCount;
+    maximumFitness = source.maximumFitness;
 
     // seeds
     evolutionSeed = source.evolutionSeed;
