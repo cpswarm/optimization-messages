@@ -26,6 +26,7 @@ public class ParameterOptimizationConfiguration {
   protected int maximumGeneration;
   protected int candidateCount;
   protected int variantCount;
+  protected boolean strictVariantCount;
   protected double maximumFitness;
 
   protected long evolutionSeed;
@@ -58,6 +59,7 @@ public class ParameterOptimizationConfiguration {
     maximumGeneration = 100;
     candidateCount = 100;
     variantCount = 10;
+    strictVariantCount = true;
     maximumFitness = Double.MAX_VALUE;
 
     // seeds
@@ -91,8 +93,8 @@ public class ParameterOptimizationConfiguration {
   }
 
   /**
-   * Creates a new {@code ParameterOptimizationConfiguration} instance as a
-   * shallow copy of the source instance.
+   * Creates a new {@code ParameterOptimizationConfiguration} instance as a shallow copy of the
+   * source instance.
    * 
    * @param source the {@code ParameterOptimizationConfiguration} to copy
    */
@@ -103,6 +105,7 @@ public class ParameterOptimizationConfiguration {
     maximumGeneration = source.maximumGeneration;
     candidateCount = source.candidateCount;
     variantCount = source.variantCount;
+    strictVariantCount = source.strictVariantCount;
     maximumFitness = source.maximumFitness;
 
     // seeds
@@ -192,6 +195,20 @@ public class ParameterOptimizationConfiguration {
    */
   public void setVariantCount(int variantCount) {
     this.variantCount = variantCount;
+  }
+
+  /**
+   * @param strictVariantCount the strictVariantCount to set
+   */
+  public void setStrictVariantCount(boolean strictVariantCount) {
+    this.strictVariantCount = strictVariantCount;
+  }
+
+  /**
+   * @return the strictVariantCount
+   */
+  public boolean isStrictVariantCount() {
+    return strictVariantCount;
   }
 
   /**
@@ -342,8 +359,7 @@ public class ParameterOptimizationConfiguration {
   }
 
   /**
-   * @param proportionalMutationProbability the proportionalMutationProbability to
-   *                                        set
+   * @param proportionalMutationProbability the proportionalMutationProbability to set
    */
   public void setProportionalMutationProbability(double proportionalMutationProbability) {
     this.proportionalMutationProbability = proportionalMutationProbability;
